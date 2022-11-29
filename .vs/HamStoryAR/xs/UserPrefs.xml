@@ -1,0 +1,37 @@
+﻿<Properties StartupConfiguration="{10ABC91A-4008-DC37-D5C1-3EB6DAEA3AB3}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/Button/Button.cs">
+    <Files>
+      <File FileName="Assets/Script/ImageTracking/Jewelry.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/ImageTracking/CollectImage.cs" />
+      <File FileName="Assets/Script/ImageTracking/Collect.cs" />
+      <File FileName="Assets/Script/ImageTracking/MultipleTrackedImages.cs" />
+      <File FileName="Assets/Script/ImageTracking/Sunflower.cs" />
+      <File FileName="Assets/Script/Button/Button.cs" Line="42" Column="38" />
+      <File FileName="Assets/Script/Story/StoryButon.cs" Line="46" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="HamStoryAR" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Script" expanded="True">
+                <Node name="Button" expanded="True" />
+                <Node name="ImageTracking" expanded="True">
+                  <Node name="Jewelry.cs" selected="True" />
+                </Node>
+                <Node name="Story" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="c858e4a9-03eb-4396-b315-44f7d04ccb6f" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

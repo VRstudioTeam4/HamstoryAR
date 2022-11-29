@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 848409ee8ba454f42a5ddff137688a27, type: 3}
+  m_Name: Reference
+  m_EditorClassIdentifier: 
+  m_GuidLow: 5190100550980056739
+  m_GuidHigh: 2610242804959554472
+  m_Images:
+  - m_SerializedGuid:
+      m_GuidLow: 5131937398279455820
+      m_GuidHigh: 12099354069127203501
+    m_SerializedTextureGuid:
+      m_GuidLow: 17607089116479576710
+      m_GuidHigh: 7366897572409725051
+    m_Size: {x: 0.2, y: 0.15194805}
+    m_SpecifySize: 1
+    m_Name: apple
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 4820691481308122292
+      m_GuidHigh: 13992724668716809892
+    m_SerializedTextureGuid:
+      m_GuidLow: 6091176820062527987
+      m_GuidHigh: 7740927846445165816
+    m_Size: {x: 0.2, y: 0.2}
+    m_SpecifySize: 1
+    m_Name: bread
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 5392433043615519153
+      m_GuidHigh: 9350041544557787546
+    m_SerializedTextureGuid:
+      m_GuidLow: 17630097344823038534
+      m_GuidHigh: 18130256729733648714
+    m_Size: {x: 0.2, y: 0.2}
+    m_SpecifySize: 1
+    m_Name: cookie
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 5556188390237418346
+      m_GuidHigh: 18017801030676624313
+    m_SerializedTextureGuid:
+      m_GuidLow: 6081868097990936710
+      m_GuidHigh: 16419008272263067737
+    m_Size: {x: 0.2, y: 0.2}
+    m_SpecifySize: 1
+    m_Name: donut
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 5189120922147738744
+      m_GuidHigh: 12686816840763389608
+    m_SerializedTextureGuid:
+      m_GuidLow: 15328547718691098503
+      m_GuidHigh: 14620635637664921065
+    m_Size: {x: 0.2, y: 0.13333334}
+    m_SpecifySize: 1
+    m_Name: coffee
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 5466817472918756049
+      m_GuidHigh: 12709606885538729125
+    m_SerializedTextureGuid:
+      m_GuidLow: 12990019735517441202
+      m_GuidHigh: 15471216570441130808
+    m_Size: {x: 0.2, y: 0.11226667}
+    m_SpecifySize: 1
+    m_Name: money
+    m_Texture: {fileID: 0}

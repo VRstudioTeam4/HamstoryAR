@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/Main/Main.unity
+    guid: 9b8bfa584562943efa09c218ef420f1f
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: Assets/Scenes/Main/ARCamera.unity
+    guid: 257df8e3815678647b4c9448e1a8e448
+  - enabled: 0
+    path: Assets/Scenes/Main/ARStickerTracking.unity
+    guid: 3a7b9249654f14066bccba06a31c6c61
+  - enabled: 0
+    path: Assets/Scenes/Main/RoomSelect.unity
+    guid: 0f3e65d2ef748d543a0e5cf670d3dc8b
+  - enabled: 1
+    path: Assets/Scenes/Main/HamsterRoom.unity
+    guid: 4fad43f4ab75054438ec0d32f020c322
+  - enabled: 0
+    path: Assets/Scenes/Main/stroe.unity
+    guid: 6d811fabb5a24490692c4d34e4144211
+  - enabled: 0
+    path: Assets/Scenes/Main/Jwerly.unity
+    guid: 26cdc12ca51cd47b6a9a3bda2b80244a
+  - enabled: 0
+    path: Assets/Scenes/Main/Story.unity
+    guid: 15eee4602232646d4a0df3d7f751936d
+  m_configObjects:
+    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: ae68f4bea3881bb47bcda44bd8fa43d1, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: d83acf8c09b546043a0285afa5cf94d0, type: 2}
