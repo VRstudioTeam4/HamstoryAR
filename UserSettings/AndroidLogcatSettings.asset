@@ -1,9 +1,9 @@
 {
-    "m_SelectedDeviceId": "R54R3020VSN",
+    "m_SelectedDeviceId": "R54R3020WPM",
     "m_SelectedPackage": {
-        "deviceId": "R54R3020VSN",
+        "deviceId": "R54R3020WPM",
         "name": "com.DefaultCompany.HamStoryAR",
-        "processId": 4477,
+        "processId": 22873,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -318,6 +318,66 @@
             "deviceId": "R54R3020WPM",
             "name": "com.DefaultCompany.HamStoryAR",
             "processId": 15846,
+            "exited": false
+        },
+        {
+            "deviceId": "R54R3020WPM",
+            "name": "com.DefaultCompany.HamStoryAR",
+            "processId": 22272,
+            "exited": false
+        },
+        {
+            "deviceId": "R54R3020WPM",
+            "name": "com.DefaultCompany.HamStoryAR",
+            "processId": 30160,
+            "exited": false
+        },
+        {
+            "deviceId": "R54R3020WPM",
+            "name": "com.DefaultCompany.HamStoryAR",
+            "processId": 18164,
+            "exited": false
+        },
+        {
+            "deviceId": "R54R3020WPM",
+            "name": "com.DefaultCompany.HamStoryAR",
+            "processId": 19335,
+            "exited": false
+        },
+        {
+            "deviceId": "R54R3020WPM",
+            "name": "com.DefaultCompany.HamStoryAR",
+            "processId": 20223,
+            "exited": false
+        },
+        {
+            "deviceId": "R54R3020WPM",
+            "name": "com.DefaultCompany.HamStoryAR",
+            "processId": 19520,
+            "exited": false
+        },
+        {
+            "deviceId": "R54R3020WPM",
+            "name": "com.DefaultCompany.HamStoryAR",
+            "processId": 20965,
+            "exited": false
+        },
+        {
+            "deviceId": "R54R3020WPM",
+            "name": "com.DefaultCompany.HamStoryAR",
+            "processId": 21899,
+            "exited": false
+        },
+        {
+            "deviceId": "R54R3020WPM",
+            "name": "com.DefaultCompany.HamStoryAR",
+            "processId": 23138,
+            "exited": false
+        },
+        {
+            "deviceId": "R54R3020WPM",
+            "name": "com.DefaultCompany.HamStoryAR",
+            "processId": 22873,
             "exited": false
         },
         {

@@ -9,33 +9,49 @@ public class HamsterRoomManager : MonoBehaviour
   public GameObject hamsterObject;
   private bool hamsterTouch = false;
   private bool hamsterStroke = false;
-  private int like = 0;
+ // public int like = 0;
   public Text likeText;
+  public Text SunflowerText;
 
 
-  void Start()
+    // Get Sunflower script
+    Sunflower _Sunflower;
+
+    // Get Like script
+    LikeManager _Like;
+    
+
+   
+    void Start()
   {
-    hamsterObject = hamsterObject.transform.GetChild(0).gameObject;
-    // likeText = GameObject.Find("Canvas");
-  }
+        
+        hamsterObject = hamsterObject.transform.GetChild(0).gameObject;
+        _Sunflower = GameObject.Find("PointManager").GetComponent<Sunflower>();
+        _Like = GameObject.Find("PointManager").GetComponent<LikeManager>();
+        // likeText = GameObject.Find("Canvas");
+    }
   void Update()
   {
-    // if(Input.GetMouseButtonDown(0)) {
-    //     Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-    //     RaycastHit hit;
+        // if(Input.GetMouseButtonDown(0)) {
+        //     Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        //     RaycastHit hit;
 
-    //     if(Physics.Raycast(ray, out hit)){
-    //         Debug.Log(hit.transform.gameObject);
+        //     if(Physics.Raycast(ray, out hit)){
+        //         Debug.Log(hit.transform.gameObject);
 
-    //         if(hit.transform.gameObject == hamsterObject) {
+        //         if(hit.transform.gameObject == hamsterObject) {
 
-    //         }
-    //     }
+        //         }
+        //     }
 
-    //     Debug.Log(Input.touches);
+        //     Debug.Log(Input.touches);
 
+        // Get Sunflower script
+     
+        SunflowerText.text = _Sunflower.sunflowerseed.ToString();
+        likeText.text = _Like.like.ToString();
 
-    foreach (var touch in Input.touches)
+        foreach (var touch in Input.touches)
     {
       if (touch.phase == TouchPhase.Began)
       {
@@ -85,15 +101,15 @@ public class HamsterRoomManager : MonoBehaviour
         if (hamsterTouch == true)
         {
           Debug.Log("touch!!");
-          like += 1;
-          likeText.text = like.ToString();
+          _Like.like += 1;
+          likeText.text = _Like.like.ToString();
           hamsterTouch = false;
         }
 
         if (hamsterStroke == true)
         {
-          like += 30;
-          likeText.text = like.ToString();
+          _Like.like += 30;
+          likeText.text = _Like.like.ToString();
           hamsterStroke = false;
         }
 
