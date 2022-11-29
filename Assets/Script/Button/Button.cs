@@ -27,7 +27,7 @@ public class Button : MonoBehaviour
     //To Main
     public void Tomain()
     {
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene("HamsterRoom");
     }
 
     //To Jwerly

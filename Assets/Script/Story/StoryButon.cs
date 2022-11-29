@@ -9,12 +9,18 @@ public class StoryButon : MonoBehaviour
     public GameObject Image2;
     public GameObject Image3;
 
+  
+    // Get Like script
+    LikeManager _Like;
+
+
+    
     public void Tofirststory()
     {
-        // Get Sunflower script
-        Sunflower _Sunflower = GameObject.Find("Sunflower").GetComponent<Sunflower>();
+        LikeManager _Like = GameObject.Find("PointManager").GetComponent<LikeManager>();
+        Debug.Log(_Like.like);
 
-        if (_Sunflower.sunflowerseed >= 10)
+        if (_Like.like >= 100)
         {
             Image1.SetActive(true);
         }
@@ -23,10 +29,10 @@ public class StoryButon : MonoBehaviour
 
     public void Tosecondstory()
     {
-        // Get Sunflower script
-        Sunflower _Sunflower = GameObject.Find("Sunflower").GetComponent<Sunflower>();
+        LikeManager _Like = GameObject.Find("PointManager").GetComponent<LikeManager>();
+        Debug.Log(_Like.like);
 
-        if (_Sunflower.sunflowerseed >= 20)
+        if (_Like.like >= 200)
         {
             Image2.SetActive(true);
         }
@@ -34,14 +40,13 @@ public class StoryButon : MonoBehaviour
 
     public void Tothirdstory()
     {
-        // Get Sunflower script
-        Sunflower _Sunflower = GameObject.Find("Sunflower").GetComponent<Sunflower>();
+        LikeManager _Like = GameObject.Find("PointManager").GetComponent<LikeManager>();
+        Debug.Log(_Like.like);
 
-        if (_Sunflower.sunflowerseed >= 30)
+        if (_Like.like >= 300)
         {
             Image3.SetActive(true);
         }
     }
-
 
 }

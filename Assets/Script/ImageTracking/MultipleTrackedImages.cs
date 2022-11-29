@@ -65,7 +65,7 @@ public class MultipleTrackedImages : MonoBehaviour
         Jewelry _Jewelry = GameObject.Find("Jewelry").GetComponent<Jewelry>();
 
         // Get Sunflower script
-        Sunflower _Sunflower = GameObject.Find("Sunflower").GetComponent<Sunflower>();
+        Sunflower _Sunflower = GameObject.Find("PointManager").GetComponent<Sunflower>();
 
 
         //raycasting

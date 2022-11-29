@@ -35,6 +35,8 @@ public class MainSceneChange : MonoBehaviour
         }
         else if(currentButton.Equals("ARCameraButton")){
             SceneManager.LoadScene("ARCamera");
+        }else if (currentButton.Equals("DiaryButton")){
+            SceneManager.LoadScene("Story");
         }
     }
 }
