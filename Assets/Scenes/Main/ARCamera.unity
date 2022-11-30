@@ -964,7 +964,7 @@ MonoBehaviour:
   - {fileID: 1657210274609154922, guid: c1564084f7e5a9c49afe30efb780f393, type: 3}
   - {fileID: 1657210274609154922, guid: c1564084f7e5a9c49afe30efb780f393, type: 3}
   - {fileID: 1657210274609154922, guid: c1564084f7e5a9c49afe30efb780f393, type: 3}
-  objectPrefab: {fileID: 8094380727196276632, guid: f6e10307a7900a4469a4cef1d6a8a281, type: 3}
+  objectPrefab: {fileID: 8574994900549642671, guid: 3ad12ec8d88863e4ab8ebbcde0394af2, type: 3}
 --- !u!1 &1314101506
 GameObject:
   m_ObjectHideFlags: 0
