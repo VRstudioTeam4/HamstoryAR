@@ -23,9 +23,10 @@ public class MultipleTrackedImages : MonoBehaviour
     public GameObject coffee;
     public GameObject money;
 
-
+    // Play Animation
     public GameObject Hiphop;
     public GameObject Idle;
+    public GameObject Ham1;
   
 
     public GameObject objectToInstinate;
@@ -123,8 +124,8 @@ public class MultipleTrackedImages : MonoBehaviour
                 Debug.Log("Get Bread Sticker & 10 sunflower");
 
                 audio1.Play();
-                
-                Idle.SetActive(true);
+
+                Ham1.SetActive(true);
 
                 Invoke("activefunction", 3); 
             }
@@ -329,7 +330,7 @@ public class MultipleTrackedImages : MonoBehaviour
             }
             else if(name == "bread")
             {
-                Hiphop.transform.position = img.transform.position;
+                Ham1.transform.position = img.transform.position;
             }
             else if (name == "cookie")
             {
@@ -360,6 +361,7 @@ public class MultipleTrackedImages : MonoBehaviour
     {
         Hiphop.SetActive(false);
         Idle.SetActive(false);
+        Ham1.SetActive(false);
     }
 
 
