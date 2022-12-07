@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
@@ -20,8 +21,26 @@ public class HamsterRoomManager : MonoBehaviour
   public Text SunflowerText;
 
   public GameObject malpoongsun;
-  public GameObject malpoongsun_hungry;
-  public GameObject malpoongsun_simsim;
+
+  float timer;
+  int waitingTime;
+
+  enum hamsterState
+  {
+    Idle,
+    Sad,
+    Happy,
+    Angry,
+    Fun,
+    Love,
+    Hungry,
+    Bored
+  }
+
+  private Dictionary<hamsterState, int> m_hamsterStates = new Dictionary<hamsterState, int>();
+  [SerializeField] private hamsterState m_hamsterState = hamsterState.Idle;
+  [SerializeField] private hamsterState m_hamsterBeforeState = hamsterState.Idle;
+
 
 
   // Get Sunflower script
@@ -38,28 +57,38 @@ public class HamsterRoomManager : MonoBehaviour
     hamsterObject = hamsterObject.transform.GetChild(0).gameObject;
     _Sunflower = GameObject.Find("PointManager").GetComponent<Sunflower>();
     _Like = GameObject.Find("PointManager").GetComponent<LikeManager>();
-    malpoongsun_hungry = malpoongsun.transform.Find("Hungry").gameObject;
-    malpoongsun_simsim = malpoongsun.transform.Find("Simsim").gameObject;
     malpoongsun.SetActive(false);
+
+    timer = 0.0f;
+    waitingTime = 3;
+
+    // 각 상태에 따른 랜덤 가중치 부여
+    m_hamsterStates.Add(hamsterState.Idle, 90);
+    m_hamsterStates.Add(hamsterState.Sad, 5);
+    m_hamsterStates.Add(hamsterState.Happy, 5);
+    m_hamsterStates.Add(hamsterState.Angry, 5);
+    m_hamsterStates.Add(hamsterState.Fun, 5);
+    m_hamsterStates.Add(hamsterState.Love, 5);
+    m_hamsterStates.Add(hamsterState.Hungry, 5);
+    m_hamsterStates.Add(hamsterState.Bored, 5);
+
     // likeText = GameObject.Find("Canvas");
   }
   void Update()
   {
-    // if(Input.GetMouseButtonDown(0)) {
-    //     Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-    //     RaycastHit hit;
 
-    //     if(Physics.Raycast(ray, out hit)){
-    //         Debug.Log(hit.transform.gameObject);
 
-    //         if(hit.transform.gameObject == hamsterObject) {
+    // 3초에 한 번 랜덤으로 상태 값 업데이트
 
-    //         }
-    //     }
+    timer += Time.deltaTime;
 
-    //     Debug.Log(Input.touches);
+    if (timer > waitingTime && !(m_hamsterState == hamsterState.Love && hamsterStroke))
+    {
+      setHamsterState();
+      Debug.Log("랜덤 상태: " + m_hamsterState.ToString());
+      timer = 0;
+    }
 
-    // Get Sunflower script
 
     SunflowerText.text = _Sunflower.sunflowerseed.ToString();
     likeText.text = _Like.like.ToString();
@@ -83,7 +112,7 @@ public class HamsterRoomManager : MonoBehaviour
 
       }
 
-      if (touch.phase == TouchPhase.Moved)
+      if (touch.phase == TouchPhase.Moved && m_hamsterState == hamsterState.Love)  //쓰다듬기
       {
         // Construct a ray from the current touch coordinates
         var ray = Camera.main.ScreenPointToRay(touch.position);
@@ -95,7 +124,6 @@ public class HamsterRoomManager : MonoBehaviour
           {
             hamsterTouch = false;
             hamsterStroke = true;
-            Debug.Log("hamster is cute!");
           }
           //   Debug.Log("Move: ", hit.transform.gameObject);
           //         Debug.Log(hit.transform.gameObject);
@@ -108,22 +136,48 @@ public class HamsterRoomManager : MonoBehaviour
 
       }
 
-      if (touch.phase == TouchPhase.Ended)
+      if (touch.phase == TouchPhase.Ended)  // 터치
       {
         // 터치 실행
         if (hamsterTouch == true)
         {
-          Debug.Log("touch!!");
-          _Like.like += 1;
-          likeText.text = _Like.like.ToString();
-          hamsterTouch = false;
+          if (m_hamsterState == hamsterState.Idle || m_hamsterState == hamsterState.Sad || m_hamsterState == hamsterState.Happy || m_hamsterState == hamsterState.Angry || m_hamsterState == hamsterState.Fun)
+          {
+            Debug.Log("touch!!");
+            _Like.like += 1;
+            likeText.text = _Like.like.ToString();
+            hamsterTouch = false;
+            m_hamsterState = hamsterState.Idle;
+          }
+          else if (m_hamsterState == hamsterState.Hungry)
+          {
+            //배고픔 상태 처리
+            if (_Sunflower.sunflowerseed > 0)
+            {
+              _Sunflower.sunflowerseed -= 1;
+              _Like.like += 40;
+            }
+            hamsterTouch = false;
+            m_hamsterState = hamsterState.Idle;
+          }
+          else if (m_hamsterState == hamsterState.Bored)
+          {
+            //심심 상태 처리
+            _Like.like += 20;
+            hamsterTouch = false;
+            m_hamsterState = hamsterState.Idle;
+          }
+
         }
 
-        if (hamsterStroke == true)
+        if (hamsterStroke == true) // 쓰다듬기
         {
-          _Like.like += 30;
-          likeText.text = _Like.like.ToString();
-          hamsterStroke = false;
+          if (m_hamsterState == hamsterState.Love)
+          {
+            _Like.like += 30;
+            likeText.text = _Like.like.ToString();
+            hamsterStroke = false;
+          }
         }
 
 
@@ -131,119 +185,155 @@ public class HamsterRoomManager : MonoBehaviour
 
     }
 
-    int interactTiming = Random.Range(0, 1000);
-    Debug.Log(interactTiming);
-    Debug.Log(malpoongsun.activeSelf);
-
-    if (interactTiming < 10 && malpoongsun.activeSelf == false)
+    // 말풍선
+    if (m_hamsterState != hamsterState.Idle)
     {
-      Debug.Log("hello!");
-      if (Random.Range(0, 10) > 5)
-      { //hungry
-        Debug.Log("hungry");
-        status = "hungry";
-      }
-      else
-      {  //simsim
-        status = "simsim";
-      }
-      showMalPoongSun();
-      Invoke("disableMalPoonSun", 5);
-    }
-
-    if (malpoongsun.activeSelf == true && shutdownMalpoonsung == true)
-    {
-      foreach (Transform child in malpoongsun_hungry.transform)
-      {
-        child.gameObject.SetActive(false);
-      }
-      foreach (Transform child in malpoongsun_simsim.transform)
-      {
-        child.gameObject.SetActive(false);
-      }
+      enableMalPoonSun();
       foreach (Transform child in malpoongsun.transform)
-      {
-        child.gameObject.SetActive(false);
-      }
-      malpoongsun.SetActive(false);
-      shutdownMalpoonsung = false;
+        {
+          child.gameObject.SetActive(false);
+        }
+      malpoongsun.transform.Find(m_hamsterState.ToString()).gameObject.SetActive(true);
     }
-    // Debug.Log("터치카운트 : " + Input.touchCount);
+    else
+    {
+      disableMalPoonSun();
+    }
 
-    // if (Input.touchCount == 1)
-    // {
-    //   Touch touch = Input.GetTouch(0);
-    //   if (touch.phase == TouchPhase.Began)
-    //   {
-    //     prePos = touch.position - touch.deltaPosition;
-    //   }
-    //   else if (touch.phase == TouchPhase.Moved)
-    //   {
-    //     nowPos = touch.position - touch.deltaPosition;
-    //     movePos = (Vector3)(prePos - nowPos) * Time.deltaTime * Speed;
-    //     player.transform.Translate(movePos);
-    //     prePos = touch.position - touch.deltaPosition;
-    //   }
-    // }
+
   }
 
   public void enableMalPoonSun()
   {
     Debug.Log("enable!!");
     malpoongsun.SetActive(true);
+
   }
   public void disableMalPoonSun()
   {
-    if (isInteract == false)
+    foreach (Transform child in malpoongsun.transform)
     {
-      shutdownMalpoonsung = true;
+      child.gameObject.SetActive(false);
     }
-
-    // malpoongsun.SetActive(false);
+    malpoongsun.SetActive(false);
   }
 
-  public void showMalPoongSun()
+  // public void showMalPoongSun()
+  // {
+  //   enableMalPoonSun();
+  //   if (status == "hungry")
+  //   { //hungry
+  //     malpoongsun_hungry.SetActive(true);
+  //     malpoongsun_hungry.transform.Find("Request").gameObject.SetActive(true);
+  //   }
+  //   else
+  //   {  //simsim
+  //     malpoongsun_simsim.SetActive(true);
+  //     malpoongsun_simsim.transform.Find("Request").gameObject.SetActive(true);
+  //   }
+  // }
+
+  // public void interactHamster()
+  // {
+  //   isInteract = true;
+  //   if (status == "hungry")
+  //   {
+  //     foreach (Transform child in malpoongsun_hungry.transform)
+  //     {
+  //       child.gameObject.SetActive(false);
+  //     }
+  //     if (_Sunflower.sunflowerseed > 0)
+  //     {
+  //       malpoongsun_hungry.transform.Find("Accept").gameObject.SetActive(true);
+  //       _Sunflower.sunflowerseed -= 1;
+  //       _Like.like += 40;
+  //     }
+  //     else
+  //     {
+  //       malpoongsun_hungry.transform.Find("Fail").gameObject.SetActive(true);
+  //     }
+  //     isInteract = false;
+  //     Invoke("disableMalPoonSun", 5);
+  //   }
+  //   else if (status == "simsim")
+  //   {
+  //     _Like.like += 20;
+  //     isInteract = false;
+  //     disableMalPoonSun();
+  //   }
+  // }
+
+  private void setHamsterState()
   {
-    enableMalPoonSun();
-    if (status == "hungry")
-    { //hungry
-      malpoongsun_hungry.SetActive(true);
-      malpoongsun_hungry.transform.Find("Request").gameObject.SetActive(true);
-    }
-    else
-    {  //simsim
-      malpoongsun_simsim.SetActive(true);
-      malpoongsun_simsim.transform.Find("Request").gameObject.SetActive(true);
+    // Debug.Log(WeightedRandomizer.From(m_hamsterStates).TakeOne());
+    m_hamsterBeforeState = m_hamsterState;
+    m_hamsterState = WeightedRandomizer.From(m_hamsterStates).TakeOne();
+  }
+
+  public static T RandomEnum<T>()
+
+  {
+    Array values = Enum.GetValues(typeof(T));
+
+    return (T)values.GetValue(new System.Random().Next(0, values.Length));
+  }
+
+  public static class WeightedRandomizer
+  {
+    public static WeightedRandomizer<R> From<R>(Dictionary<R, int> spawnRate)
+    {
+      return new WeightedRandomizer<R>(spawnRate);
     }
   }
 
-  public void interactHamster()
+  public class WeightedRandomizer<T>
   {
-    isInteract = true;
-    if (status == "hungry")
+    private static System.Random _random = new System.Random();
+    private Dictionary<T, int> _weights;
+
+    public WeightedRandomizer(Dictionary<T, int> weights)
     {
-      foreach (Transform child in malpoongsun_hungry.transform)
-      {
-        child.gameObject.SetActive(false);
-      }
-      if (_Sunflower.sunflowerseed > 0)
-      {
-        malpoongsun_hungry.transform.Find("Accept").gameObject.SetActive(true);
-        _Sunflower.sunflowerseed -= 1;
-        _Like.like += 40;
-      }
-      else
-      {
-        malpoongsun_hungry.transform.Find("Fail").gameObject.SetActive(true);
-      }
-      isInteract = false;
-      Invoke("disableMalPoonSun", 5);
+      _weights = weights;
     }
-    else if (status == "simsim")
+
+    public T TakeOne()
     {
-      _Like.like += 20;
-      isInteract = false;
-      disableMalPoonSun();
+      var sortedSpawnRate = Sort(_weights);
+      int sum = 0;
+      foreach (var spawn in _weights)
+      {
+        sum += spawn.Value;
+      }
+
+      int roll = _random.Next(0, sum);
+
+      T selected = sortedSpawnRate[sortedSpawnRate.Count - 1].Key;
+      foreach (var spawn in sortedSpawnRate)
+      {
+        if (roll < spawn.Value)
+        {
+          selected = spawn.Key;
+          break;
+        }
+        roll -= spawn.Value;
+      }
+
+      return selected;
+    }
+
+    private List<KeyValuePair<T, int>> Sort(Dictionary<T, int> weights)
+    {
+      var list = new List<KeyValuePair<T, int>>(weights);
+
+      list.Sort(
+          delegate (KeyValuePair<T, int> firstPair,
+                      KeyValuePair<T, int> nextPair)
+          {
+            return firstPair.Value.CompareTo(nextPair.Value);
+          }
+          );
+
+      return list;
     }
   }
 }
