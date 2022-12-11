@@ -1,10 +1,10 @@
 ﻿<Properties StartupConfiguration="{10ABC91A-4008-DC37-D5C1-3EB6DAEA3AB3}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/Story/Likemention.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/HamsterRoomManager.cs">
     <Files>
-      <File FileName="Assets/Script/Story/StoryButon.cs" Line="103" Column="39" />
-      <File FileName="Assets/HamsterRoomManager.cs" />
-      <File FileName="Assets/Script/MainScene/LikeManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Script/Story/Likemention.cs" Line="52" Column="6" />
+      <File FileName="Assets/Script/Story/StoryButon.cs" Line="33" Column="36" />
+      <File FileName="Assets/HamsterRoomManager.cs" Line="310" Column="1" />
+      <File FileName="Assets/Script/MainScene/LikeManager.cs" />
+      <File FileName="Assets/Script/Story/Likemention.cs" Line="57" Column="23" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -16,7 +16,7 @@
                 <Node name="ImageTracking" expanded="True" />
                 <Node name="MainScene" expanded="True" />
                 <Node name="Story" expanded="True">
-                  <Node name="Likemention.cs" selected="True" />
+                  <Node name="StoryButon.cs" selected="True" />
                 </Node>
               </Node>
             </Node>
@@ -27,7 +27,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="910d2fa2-a018-41bf-9f9a-bc8393088b25" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="dfa2b5c6-d757-48bd-94cb-c9b76d65b245" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
