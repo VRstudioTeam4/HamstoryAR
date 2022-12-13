@@ -11,31 +11,31 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Intro/Main.unity
     guid: 81dfbc1ef7a33d84197e08be80977641
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Intro/Tutorial.unity
     guid: 69156c7199762de458f256cf5d5abc6d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Main/RoomSelect.unity
     guid: 0f3e65d2ef748d543a0e5cf670d3dc8b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Main/HamsterRoom.unity
     guid: 4fad43f4ab75054438ec0d32f020c322
   - enabled: 1
     path: Assets/Scenes/Main/ARCamera.unity
     guid: 257df8e3815678647b4c9448e1a8e448
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Main/ARStickerTracking.unity
     guid: 3a7b9249654f14066bccba06a31c6c61
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Main/stroe.unity
     guid: 6d811fabb5a24490692c4d34e4144211
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Main/Jwerly.unity
     guid: 26cdc12ca51cd47b6a9a3bda2b80244a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Main/Story.unity
     guid: 15eee4602232646d4a0df3d7f751936d
   m_configObjects:

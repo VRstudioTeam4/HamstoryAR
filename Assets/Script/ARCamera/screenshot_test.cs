@@ -18,6 +18,8 @@ public class screenshot_test : MonoBehaviour
   private float fadeInOutTime = 0.3f;
   AudioSource cameraSound;
 
+  public Animator m_Animator;
+
   // Start is called before the first frame update
   void Start()
   {
