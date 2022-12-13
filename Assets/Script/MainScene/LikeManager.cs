@@ -21,7 +21,8 @@ public class LikeManager : MonoBehaviour
 
     private void Start()
     {
-        like = 0;
+        //like = 0;
+        like = 100;
     }
 
 
