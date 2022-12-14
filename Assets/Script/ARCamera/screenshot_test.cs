@@ -20,6 +20,8 @@ public class screenshot_test : MonoBehaviour
 
   public Animator m_Animator;
 
+  public GameObject ARSessionOrigin;
+
   // Start is called before the first frame update
   void Start()
   {
@@ -36,27 +38,34 @@ public class screenshot_test : MonoBehaviour
   public void testScreenShot()
   {
     StartCoroutine(Countdown());
+    m_Animator = ARSessionOrigin.GetComponent<FaceRegionManager>().objectPrefab.GetComponent<Animator>();
+    Debug.Log(m_Animator);
+    m_Animator.SetBool("Idle", false);
+    m_Animator.SetBool("Pose", true);
   }
 
   private IEnumerator Countdown()
   {
-    _timer = 3.5f;
+    _timer = 4.5f;
     toast.SetActive(false);
     GameObject.Find("Canvas").transform.Find("CameraButton").gameObject.SetActive(false);
 
     while (_timer > 0)
     {
       _timer -= Time.deltaTime;
-      string minutes = Mathf.Floor(_timer / 60).ToString("00");
-      string seconds = (_timer % 60).ToString("0");
-    //   if(_timer <= 0)  _timerText.text = "";
-      if (_timer>0.5) _timerText.text = string.Format(seconds);
-      else _timerText.text = "";
-      yield return null;
-
-      if (_timer < 0)
+      if (_timer < 4.0f)
       {
-        StartCoroutine(Screenshot());
+        string minutes = Mathf.Floor(_timer / 60).ToString("00");
+        string seconds = (_timer % 60).ToString("0");
+        //   if(_timer <= 0)  _timerText.text = "";
+        if (_timer > 0.5 && _timer < 3.5f) _timerText.text = string.Format(seconds);
+        else _timerText.text = "";
+        yield return null;
+
+        if (_timer < 0)
+        {
+          StartCoroutine(Screenshot());
+        }
       }
     }
   }
@@ -81,6 +90,8 @@ public class screenshot_test : MonoBehaviour
 
     GameObject.Find("Canvas").GetComponent<Canvas>().enabled = true;
     GameObject.Find("Canvas").transform.Find("CameraButton").gameObject.SetActive(true);
+    m_Animator.SetBool("Idle", true);
+    m_Animator.SetBool("Pose", false);
     StartCoroutine(ShowToastMessage());
   }
 

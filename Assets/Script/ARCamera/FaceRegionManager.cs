@@ -56,7 +56,7 @@ public class FaceRegionManager : MonoBehaviour
 
             // positioning object on the head (based on position of foreheadleft&foreheadright and rotation of notip)
             objectPrefab.transform.localPosition = (regionPrefabs[1].transform.localPosition + regionPrefabs[2].transform.localPosition)/2 + new Vector3(0,0.04f,0);
-            objectPrefab.transform.localRotation = regionPrefabs[0].transform.localRotation * Quaternion.Euler(new Vector3(30, 180, 0));
+            objectPrefab.transform.localRotation = regionPrefabs[0].transform.localRotation * Quaternion.Euler(new Vector3(15, 180, 0));
 
         }
     }

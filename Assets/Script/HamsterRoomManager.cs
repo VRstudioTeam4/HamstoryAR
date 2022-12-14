@@ -27,6 +27,8 @@ public class HamsterRoomManager : MonoBehaviour
 
   bool setting = false;
 
+  public GameObject touchParticle;
+
   enum hamsterState
   {
     Idle,
@@ -169,8 +171,37 @@ public class HamsterRoomManager : MonoBehaviour
         // 터치 실행
         if (hamsterTouch == true)
         {
+          Debug.Log("touoououdoch");
           if (m_hamsterState == hamsterState.Idle || m_hamsterState == hamsterState.Sad || m_hamsterState == hamsterState.Happy || m_hamsterState == hamsterState.Angry || m_hamsterState == hamsterState.Fun)
           {
+            Debug.Log(touch.position);
+            Vector3 pos = Camera.main.ScreenToWorldPoint(touch.position);
+            Debug.Log(pos);
+
+            Vector3 pos1 = Camera.main.ScreenToViewportPoint(touch.position);
+            Debug.Log("pos1 : " + pos1);
+            Vector3 pos2 = Camera.main.ScreenToWorldPoint(touch.position);
+            Debug.Log("pos2 : " + pos2);
+            Vector3 pos3 = Camera.main.ViewportToScreenPoint(touch.position);
+            Debug.Log("pos3 : " + pos3);
+            Vector3 pos4 = Camera.main.ViewportToWorldPoint(pos1);
+            Debug.Log("pos4 : " + pos4);
+            Vector3 pos5 = Camera.main.WorldToScreenPoint(touch.position);
+            Debug.Log("pos5 : " + pos5);
+            Vector3 pos6 = Camera.main.WorldToViewportPoint(touch.position);
+            Debug.Log("pos6 : " + pos6);
+            // 2.
+            // Instantiate(touchParticle, pos1, Quaternion.identity);
+
+            // 3.
+            // Instantiate(touchParticle, new Vector3(pos.x, (pos.y - 3), 0), Quaternion.identity);
+            Instantiate(touchParticle, new Vector3(pos1.x*13 - 6.5f, pos1.y*15 - 15.3f, 0), Quaternion.identity);
+            // Instantiate(touchParticle, new Vector3(pos2.x, (pos2.y - 3), 0), Quaternion.identity);
+            // Instantiate(touchParticle, new Vector3(pos3.x, (pos3.y - 3), 0), Quaternion.identity);
+            // Instantiate(touchParticle, new Vector3(pos4.x, (pos4.y - 3), 0), Quaternion.identity);
+            // Instantiate(touchParticle, new Vector3(pos5.x, (pos5.y - 3), 0), Quaternion.identity);
+            // Instantiate(touchParticle, new Vector3(pos6.x, (pos6.y - 3), 0), Quaternion.identity);
+
             Debug.Log("touch!!");
             _Like.like += 1;
             likeText.text = _Like.like.ToString();
