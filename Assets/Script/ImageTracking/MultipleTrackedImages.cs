@@ -24,10 +24,14 @@ public class MultipleTrackedImages : MonoBehaviour
     public GameObject money;
 
     // Play Animation
-    public GameObject Hiphop;
-    public GameObject Idle;
-    public GameObject Ham1;
-  
+    public GameObject appleani;
+    public GameObject breadani;
+    public GameObject cookieani;
+    public GameObject donutani;
+
+    //public GameObject coffeeani;
+    //public GameObject moneyani;
+
 
     public GameObject objectToInstinate;
     [SerializeField]
@@ -59,6 +63,17 @@ public class MultipleTrackedImages : MonoBehaviour
     private List<ARRaycastHit> hits = new List<ARRaycastHit>();
 
     public Transform target;
+
+    
+    private void Start()
+    {
+        apple.SetActive(false);
+        bread.SetActive(false);
+        cookie.SetActive(false);
+        donut.SetActive(false);
+        coffee.SetActive(false);
+        money.SetActive(false);
+    }
 
     void Update()
     {
@@ -102,7 +117,7 @@ public class MultipleTrackedImages : MonoBehaviour
                 Debug.Log("Get apple Sticker & 10 sunflower");
 
                 audio1.Play();
-                Idle.SetActive(true);
+                appleani.SetActive(true);
                 Invoke("activefunction", 3);
 
                 
@@ -125,7 +140,7 @@ public class MultipleTrackedImages : MonoBehaviour
 
                 audio1.Play();
 
-                Ham1.SetActive(true);
+                breadani.SetActive(true);
 
                 Invoke("activefunction", 3); 
             }
@@ -146,7 +161,7 @@ public class MultipleTrackedImages : MonoBehaviour
                 Debug.Log("Get Bread Sticker & 10 sunflower");
 
                 audio1.Play();
-                Hiphop.SetActive(true);
+                cookieani.SetActive(true);
 
                 Invoke("activefunction", 3);
 
@@ -169,7 +184,7 @@ public class MultipleTrackedImages : MonoBehaviour
                 Debug.Log("Get Donut Sticker & 10 sunflower");
 
                 audio1.Play();
-                Hiphop.SetActive(true);
+                donutani.SetActive(true);
 
                 Invoke("activefunction", 3);
 
@@ -192,7 +207,7 @@ public class MultipleTrackedImages : MonoBehaviour
                 Debug.Log("Get cookie Sticker & 10 sunflower");
 
                 audio1.Play();
-                Hiphop.SetActive(true);
+                cookieani.SetActive(true);
 
                 Invoke("activefunction", 3);
 
@@ -215,9 +230,9 @@ public class MultipleTrackedImages : MonoBehaviour
                 Debug.Log("Get coffee Sticker & 10 sunflower");
 
                 audio1.Play();
-                Hiphop.SetActive(true);
+              //  Hiphop.SetActive(true);
 
-                Invoke("activefunction", 3);
+              //  Invoke("activefunction", 3);
 
 
             }
@@ -238,9 +253,9 @@ public class MultipleTrackedImages : MonoBehaviour
                 Debug.Log("Get money Sticker & 10 sunflower");
 
                 audio1.Play();
-                Hiphop.SetActive(true);
+          //      Hiphop.SetActive(true);
 
-                Invoke("activefunction", 3);
+            //    Invoke("activefunction", 3);
             }
 
             transform.Rotate(xAngle * Time.deltaTime, yAngle * Time.deltaTime, zAngle * Time.deltaTime, Space.World);
@@ -310,7 +325,13 @@ public class MultipleTrackedImages : MonoBehaviour
         string name = img.referenceImage.name;
         GameObject spawned = spawnedPrefabs[name];
         spawned.transform.position = img.transform.position;
-        
+
+        apple.SetActive(true);
+        bread.SetActive(true);
+        cookie.SetActive(true);
+        donut.SetActive(true);
+        coffee.SetActive(true);
+        money.SetActive(true);
 
         spawned.transform.Rotate(xAngle * Time.deltaTime, yAngle * Time.deltaTime, zAngle * Time.deltaTime, Space.World);
         
@@ -326,20 +347,21 @@ public class MultipleTrackedImages : MonoBehaviour
 
             if(name == "apple")
             {
-                Idle.transform.position = img.transform.position;
+                appleani.transform.position = img.transform.position;
             }
             else if(name == "bread")
             {
-                Ham1.transform.position = img.transform.position;
+                breadani.transform.position = img.transform.position;
             }
             else if (name == "cookie")
             {
-                Hiphop.transform.position = img.transform.position;
+                cookieani.transform.position = img.transform.position;
             }
             else if (name == "donut")
             {
-                Hiphop.transform.position = img.transform.position;
+                donutani.transform.position = img.transform.position;
             }
+            /*
             else if (name == "coffee")
             {
                 Hiphop.transform.position = img.transform.position;
@@ -347,7 +369,7 @@ public class MultipleTrackedImages : MonoBehaviour
             else if (name == "money")
             {
                 Hiphop.transform.position = img.transform.position;
-            }
+            }*/
 
         }
         // poor or none tracking
@@ -359,9 +381,10 @@ public class MultipleTrackedImages : MonoBehaviour
 
     void activefunction()
     {
-        Hiphop.SetActive(false);
-        Idle.SetActive(false);
-        Ham1.SetActive(false);
+        appleani.SetActive(false);
+        breadani.SetActive(false);
+        cookieani.SetActive(false);
+        donutani.SetActive(false);
     }
 
 

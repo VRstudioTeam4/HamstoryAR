@@ -54,7 +54,7 @@ public class Likemention : MonoBehaviour
         if (_Like.like >= 300)
         {
             likemention3.text = "세번째 이야기 보러가기 !";
-            LockImage2.SetActive(false);
+            LockImage3.SetActive(false);
         }
 
 

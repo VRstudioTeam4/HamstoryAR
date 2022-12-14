@@ -1,10 +1,11 @@
 ﻿<Properties StartupConfiguration="{10ABC91A-4008-DC37-D5C1-3EB6DAEA3AB3}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/HamsterRoomManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/Story/Likemention.cs">
     <Files>
-      <File FileName="Assets/Script/Story/StoryButon.cs" Line="33" Column="36" />
-      <File FileName="Assets/HamsterRoomManager.cs" Line="310" Column="1" />
+      <File FileName="Assets/Script/ImageTracking/MultipleTrackedImages.cs" Line="329" Column="9" />
+      <File FileName="Assets/Script/Story/StoryButon.cs" Line="115" Column="15" />
       <File FileName="Assets/Script/MainScene/LikeManager.cs" />
       <File FileName="Assets/Script/Story/Likemention.cs" Line="57" Column="23" />
+      <File FileName="Assets/Script/Story/StoryskipButton.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,11 +14,11 @@
             <Node name="Assets" expanded="True">
               <Node name="Script" expanded="True">
                 <Node name="Button" expanded="True" />
-                <Node name="ImageTracking" expanded="True" />
-                <Node name="MainScene" expanded="True" />
-                <Node name="Story" expanded="True">
-                  <Node name="StoryButon.cs" selected="True" />
+                <Node name="ImageTracking" expanded="True">
+                  <Node name="MultipleTrackedImages.cs" selected="True" />
                 </Node>
+                <Node name="MainScene" expanded="True" />
+                <Node name="Story" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -27,7 +28,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="dfa2b5c6-d757-48bd-94cb-c9b76d65b245" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="e4ea440d-0c88-4cf2-adb7-7043723da12f" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

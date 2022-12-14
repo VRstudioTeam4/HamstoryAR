@@ -32,7 +32,7 @@ public class StoryButon : MonoBehaviour
             ButtonManager.SetActive(false);
             Image1.SetActive(true);
             Image1_1.SetActive(true);
-            Invoke("StoryImage2", 5);
+            // Invoke("StoryImage2", 5);
         }
 
     }
@@ -44,7 +44,10 @@ public class StoryButon : MonoBehaviour
 
         if (_Like.like >= 200)
         {
-            Image2.SetActive(true);
+            ButtonManager.SetActive(false);
+            Image1.SetActive(true);
+            Image1_1.SetActive(true);
+         //   Invoke("StoryImage2", 5);
         }
     }
 
@@ -55,47 +58,66 @@ public class StoryButon : MonoBehaviour
 
         if (_Like.like >= 300)
         {
-            Image3.SetActive(true);
+            ButtonManager.SetActive(false);
+            Image1.SetActive(true);
+            Image1_1.SetActive(true);
+          //  Invoke("StoryImage2", 5);
         }
     }
 
-    void StoryImage2()
+    public void StoryImage2()
     {
         Image1_1.SetActive(false);
         Image1_2.SetActive(true);
-        Invoke("StoryImage3", 5);
+       // Invoke("StoryImage3", 5);
     }
 
-    void StoryImage3()
+    public void StoryImage3()
     {
         Image1_2.SetActive(false);
         Image1_3.SetActive(true);
-        Invoke("StoryImage4", 5);
+     //   Invoke("StoryImage4", 5);
     }
 
-    void StoryImage4()
+    public void StoryImage4()
     {
         Image1_3.SetActive(false);
         Image1_4.SetActive(true);
-        Invoke("StoryImage5", 5);
+      //  Invoke("StoryImage5", 5);
     }
 
-    void StoryImage5()
+    public void StoryImage5()
     {
         Image1_4.SetActive(false);
         Image1_5.SetActive(true);
-        Invoke("StoryImage6", 5);
+     //   Invoke("StoryImage6", 5);
     }
 
-    void StoryImage6()
+    public void StoryImage6()
     {
         Image1_5.SetActive(false);
         Image1_6.SetActive(true);
-        Invoke("Storyfinish", 5);
+       // Invoke("Storyfinish", 5);
     }
 
-    void Storyfinish()
+    public void Storyfinish()
     {
+        Image1_6.SetActive(false);
+        Image1.SetActive(false);
+        Image2.SetActive(false);
+        Image3.SetActive(false);
+        ButtonManager.SetActive(true);
+
+    }
+
+    public void Backbutton()
+    {
+        Image1.SetActive(false);
+        Image1_1.SetActive(false);
+        Image1_2.SetActive(false);
+        Image1_3.SetActive(false);
+        Image1_4.SetActive(false);
+        Image1_5.SetActive(false);
         Image1_6.SetActive(false);
         Image1.SetActive(false);
         Image2.SetActive(false);
