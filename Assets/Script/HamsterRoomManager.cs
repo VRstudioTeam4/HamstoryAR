@@ -28,6 +28,7 @@ public class HamsterRoomManager : MonoBehaviour
   bool setting = false;
 
   public GameObject touchParticle;
+  public Material[] myMaterials = new Material[2];
 
   enum hamsterState
   {
@@ -55,6 +56,9 @@ public class HamsterRoomManager : MonoBehaviour
 
   public Animator m_Animator;
 
+  AudioSource audioSource;
+  public AudioClip clickAudio;
+
   void Start()
   {
 
@@ -62,6 +66,7 @@ public class HamsterRoomManager : MonoBehaviour
     _Sunflower = GameObject.Find("PointManager").GetComponent<Sunflower>();
     _Like = GameObject.Find("PointManager").GetComponent<LikeManager>();
     malpoongsun.SetActive(false);
+    audioSource = transform.GetComponent<AudioSource>();
 
     timer = 0.0f;
     waitingTime = 3;
@@ -180,29 +185,14 @@ public class HamsterRoomManager : MonoBehaviour
 
             Vector3 pos1 = Camera.main.ScreenToViewportPoint(touch.position);
             Debug.Log("pos1 : " + pos1);
-            Vector3 pos2 = Camera.main.ScreenToWorldPoint(touch.position);
-            Debug.Log("pos2 : " + pos2);
-            Vector3 pos3 = Camera.main.ViewportToScreenPoint(touch.position);
-            Debug.Log("pos3 : " + pos3);
-            Vector3 pos4 = Camera.main.ViewportToWorldPoint(pos1);
-            Debug.Log("pos4 : " + pos4);
-            Vector3 pos5 = Camera.main.WorldToScreenPoint(touch.position);
-            Debug.Log("pos5 : " + pos5);
-            Vector3 pos6 = Camera.main.WorldToViewportPoint(touch.position);
-            Debug.Log("pos6 : " + pos6);
-            // 2.
-            // Instantiate(touchParticle, pos1, Quaternion.identity);
 
-            // 3.
-            // Instantiate(touchParticle, new Vector3(pos.x, (pos.y - 3), 0), Quaternion.identity);
             Instantiate(touchParticle, new Vector3(pos1.x*13 - 6.5f, pos1.y*15 - 15.3f, 0), Quaternion.identity);
-            // Instantiate(touchParticle, new Vector3(pos2.x, (pos2.y - 3), 0), Quaternion.identity);
-            // Instantiate(touchParticle, new Vector3(pos3.x, (pos3.y - 3), 0), Quaternion.identity);
-            // Instantiate(touchParticle, new Vector3(pos4.x, (pos4.y - 3), 0), Quaternion.identity);
-            // Instantiate(touchParticle, new Vector3(pos5.x, (pos5.y - 3), 0), Quaternion.identity);
-            // Instantiate(touchParticle, new Vector3(pos6.x, (pos6.y - 3), 0), Quaternion.identity);
+
 
             Debug.Log("touch!!");
+            StartCoroutine("ClickMaterial");
+            audioSource.clip = clickAudio;
+            audioSource.Play();
             _Like.like += 1;
             likeText.text = _Like.like.ToString();
             hamsterTouch = false;
@@ -260,6 +250,14 @@ public class HamsterRoomManager : MonoBehaviour
     }
 
 
+  }
+
+  IEnumerator ClickMaterial() {
+    if(hamsterObject.GetComponent<Renderer>().material != myMaterials[1]) {
+      hamsterObject.GetComponent<Renderer>().material = myMaterials[1];
+      yield return new WaitForSeconds(0.5f);
+      hamsterObject.GetComponent<Renderer>().material = myMaterials[0];
+    }
   }
 
   public void enableMalPoonSun()
