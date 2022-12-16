@@ -1447,6 +1447,12 @@ MonoBehaviour:
   _timerText: {fileID: 1030881580}
   toast: {fileID: 238328772}
   m_Animator: {fileID: 0}
+  pictureMaterial:
+  - {fileID: 2100000, guid: 0ffbd03546d9a3743bbff58875d7a654, type: 2}
+  - {fileID: 2100000, guid: 68ba8b1fc0fa94b4984a6eda588c6eb4, type: 2}
+  - {fileID: 2100000, guid: 55933c624d0c86d4ba04adf846892c42, type: 2}
+  - {fileID: 2100000, guid: 8367b59f4167f7c42a198750f78f81a6, type: 2}
+  - {fileID: 2100000, guid: 5725455fd1016044fbedce536ffd2df9, type: 2}
   ARSessionOrigin: {fileID: 1207320944}
 --- !u!4 &1724144161
 Transform:
