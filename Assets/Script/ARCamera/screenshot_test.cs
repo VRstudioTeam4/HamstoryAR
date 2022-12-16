@@ -11,6 +11,7 @@ public class screenshot_test : MonoBehaviour
   private float _timer;
   private float _toastTimer;
   public Text _timerText;
+  private float _returnTimer;
 
   public GameObject toast;
   private Text toastTxt;
@@ -19,8 +20,11 @@ public class screenshot_test : MonoBehaviour
   AudioSource cameraSound;
 
   public Animator m_Animator;
+  public Material[] pictureMaterial = new Material[5];
 
   public GameObject ARSessionOrigin;
+
+  private GameObject hamsterObject;
 
   // Start is called before the first frame update
   void Start()
@@ -37,6 +41,7 @@ public class screenshot_test : MonoBehaviour
 
   public void testScreenShot()
   {
+    hamsterObject = ARSessionOrigin.GetComponent<FaceRegionManager>().objectPrefab.transform.GetChild(0).gameObject;
     StartCoroutine(Countdown());
     m_Animator = ARSessionOrigin.GetComponent<FaceRegionManager>().objectPrefab.GetComponent<Animator>();
     Debug.Log(m_Animator);
@@ -67,6 +72,33 @@ public class screenshot_test : MonoBehaviour
           StartCoroutine(Screenshot());
         }
       }
+
+      if (_timer < 3.5f)
+      {
+        if (_timer < 2.9f)
+        {
+          if (_timer < 1.0f)
+          {
+            if (_timer < 0.5f)
+            {
+              hamsterObject.GetComponent<Renderer>().material = pictureMaterial[4];
+            }
+            else
+            {
+              hamsterObject.GetComponent<Renderer>().material = pictureMaterial[3];
+            }
+          }
+          else
+          {
+            hamsterObject.GetComponent<Renderer>().material = pictureMaterial[2];
+          }
+        }
+        else
+        {
+          hamsterObject.GetComponent<Renderer>().material = pictureMaterial[1];
+        }
+
+      }
     }
   }
 
@@ -92,7 +124,26 @@ public class screenshot_test : MonoBehaviour
     GameObject.Find("Canvas").transform.Find("CameraButton").gameObject.SetActive(true);
     m_Animator.SetBool("Idle", true);
     m_Animator.SetBool("Pose", false);
+    // hamsterObject.GetComponent<Renderer>().material = pictureMaterial[0];
     StartCoroutine(ShowToastMessage());
+    StartCoroutine(ReturnMaterial());
+  }
+
+  private IEnumerator ReturnMaterial()
+  {
+    _returnTimer = 0.3f;
+    toast.SetActive(true);
+
+    while (_returnTimer > 0)
+    {
+      _returnTimer -= Time.deltaTime;
+      yield return null;
+
+      if (_returnTimer < 0)
+      {
+        hamsterObject.GetComponent<Renderer>().material = pictureMaterial[0];
+      }
+    }
   }
 
   private IEnumerator ShowToastMessage()

@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "R54R3020VSN",
         "name": "com.DefaultCompany.HamStoryAR",
-        "processId": 24791,
+        "processId": 4545,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -168,6 +168,60 @@
             "deviceId": "R54R3020VSN",
             "name": "com.DefaultCompany.HamStoryAR",
             "processId": 24791,
+            "exited": false
+        },
+        {
+            "deviceId": "R54R3020VSN",
+            "name": "com.DefaultCompany.HamStoryAR",
+            "processId": 29650,
+            "exited": false
+        },
+        {
+            "deviceId": "R54R3020VSN",
+            "name": "com.DefaultCompany.HamStoryAR",
+            "processId": 31149,
+            "exited": false
+        },
+        {
+            "deviceId": "R54R3020VSN",
+            "name": "com.DefaultCompany.HamStoryAR",
+            "processId": 31764,
+            "exited": false
+        },
+        {
+            "deviceId": "R54R3020VSN",
+            "name": "com.DefaultCompany.HamStoryAR",
+            "processId": 32528,
+            "exited": false
+        },
+        {
+            "deviceId": "R54R3020VSN",
+            "name": "com.DefaultCompany.HamStoryAR",
+            "processId": 1294,
+            "exited": false
+        },
+        {
+            "deviceId": "R54R3020VSN",
+            "name": "com.DefaultCompany.HamStoryAR",
+            "processId": 2130,
+            "exited": false
+        },
+        {
+            "deviceId": "R54R3020VSN",
+            "name": "com.DefaultCompany.HamStoryAR",
+            "processId": 3015,
+            "exited": false
+        },
+        {
+            "deviceId": "R54R3020VSN",
+            "name": "com.DefaultCompany.HamStoryAR",
+            "processId": 4095,
+            "exited": false
+        },
+        {
+            "deviceId": "R54R3020VSN",
+            "name": "com.DefaultCompany.HamStoryAR",
+            "processId": 4545,
             "exited": false
         },
         {

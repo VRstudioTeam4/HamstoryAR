@@ -28,7 +28,7 @@ public class HamsterRoomManager : MonoBehaviour
   bool setting = false;
 
   public GameObject touchParticle;
-  public Material[] myMaterials = new Material[2];
+  public Material[] myMaterials = new Material[3];
 
   enum hamsterState
   {
@@ -58,6 +58,7 @@ public class HamsterRoomManager : MonoBehaviour
 
   AudioSource audioSource;
   public AudioClip clickAudio;
+  public AudioClip strokeAudio;
 
   void Start()
   {
@@ -150,6 +151,7 @@ public class HamsterRoomManager : MonoBehaviour
       if (touch.phase == TouchPhase.Moved && m_hamsterState == hamsterState.Love)  //쓰다듬기
       {
         // Construct a ray from the current touch coordinates
+
         var ray = Camera.main.ScreenPointToRay(touch.position);
         RaycastHit hit;
 
@@ -157,8 +159,24 @@ public class HamsterRoomManager : MonoBehaviour
         {
           if (hit.transform.gameObject == hamsterObject)
           {
+            if (!hamsterStroke)
+            {
+              audioSource.clip = strokeAudio;
+              audioSource.loop = true;
+              audioSource.Play();
+            }
             hamsterTouch = false;
             hamsterStroke = true;
+            m_Animator.SetBool("Idle", false);
+            m_Animator.SetBool("Love", false);
+            m_Animator.SetBool("Hungry", false);
+            m_Animator.SetBool("Bored", false);
+            m_Animator.SetBool("Stroke", true);
+            Debug.Log("stroke true!!");
+            if (hamsterObject.GetComponent<Renderer>().material != myMaterials[2])
+            {
+              hamsterObject.GetComponent<Renderer>().material = myMaterials[2];
+            }
           }
           //   Debug.Log("Move: ", hit.transform.gameObject);
           //         Debug.Log(hit.transform.gameObject);
@@ -168,6 +186,11 @@ public class HamsterRoomManager : MonoBehaviour
           //         }
           //     }
         }
+        // Vector3 pos1 = Camera.main.ScreenToViewportPoint(touch.position);
+        // Debug.Log("pos1 : " + pos1);
+
+        // Instantiate(touchParticle, new Vector3(pos1.x * 13 - 6.5f, pos1.y * 15 - 15.3f, 0), Quaternion.identity);
+
 
       }
 
@@ -186,7 +209,7 @@ public class HamsterRoomManager : MonoBehaviour
             Vector3 pos1 = Camera.main.ScreenToViewportPoint(touch.position);
             Debug.Log("pos1 : " + pos1);
 
-            Instantiate(touchParticle, new Vector3(pos1.x*13 - 6.5f, pos1.y*15 - 15.3f, 0), Quaternion.identity);
+            Instantiate(touchParticle, new Vector3(pos1.x * 13 - 6.5f, pos1.y * 15 - 15.3f, 0), Quaternion.identity);
 
 
             Debug.Log("touch!!");
@@ -226,6 +249,9 @@ public class HamsterRoomManager : MonoBehaviour
             _Like.like += 30;
             likeText.text = _Like.like.ToString();
             hamsterStroke = false;
+            hamsterObject.GetComponent<Renderer>().material = myMaterials[0];
+            audioSource.loop = false;
+            audioSource.Stop();
           }
         }
 
@@ -252,8 +278,10 @@ public class HamsterRoomManager : MonoBehaviour
 
   }
 
-  IEnumerator ClickMaterial() {
-    if(hamsterObject.GetComponent<Renderer>().material != myMaterials[1]) {
+  IEnumerator ClickMaterial()
+  {
+    if (hamsterObject.GetComponent<Renderer>().material != myMaterials[1])
+    {
       hamsterObject.GetComponent<Renderer>().material = myMaterials[1];
       yield return new WaitForSeconds(0.5f);
       hamsterObject.GetComponent<Renderer>().material = myMaterials[0];
@@ -338,6 +366,7 @@ public class HamsterRoomManager : MonoBehaviour
       m_Animator.SetBool("Love", false);
       m_Animator.SetBool("Hungry", false);
       m_Animator.SetBool("Bored", false);
+      m_Animator.SetBool("Stroke", false);
     }
     else
     {
@@ -345,6 +374,7 @@ public class HamsterRoomManager : MonoBehaviour
       m_Animator.SetBool("Love", false);
       m_Animator.SetBool("Hungry", false);
       m_Animator.SetBool("Bored", false);
+      m_Animator.SetBool("Stroke", false);
       m_Animator.SetBool(m_hamsterState.ToString(), true);
     }
   }

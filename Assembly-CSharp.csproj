@@ -44,6 +44,7 @@
      <Compile Include="Assets\GUIPackEasyFlat\Demo\Scripts\Transition.cs" />
      <Compile Include="Assets\Script\MainScene\LikeManager.cs" />
      <Compile Include="Assets\GUIPackEasyFlat\Demo\Scripts\BackgroundMusic.cs" />
+     <Compile Include="Assets\Script\BGMmanager.cs" />
      <Compile Include="Assets\GUIPackEasyFlat\Demo\Scripts\Fader.cs" />
      <Compile Include="Assets\Script\ImageTracking\CollectImage.cs" />
      <Compile Include="Assets\GUIPackEasyFlat\Demo\Scripts\InitialPlayerPrefs.cs" />
@@ -72,13 +73,11 @@
      <Compile Include="Assets\Script\ARCamera\FaceRegionManager.cs" />
      <Compile Include="Assets\GUIPackEasyFlat\Demo\Scripts\LevelScene.cs" />
      <Compile Include="Assets\Script\HamsterRoomManager.cs" />
-     <Compile Include="Assets\BGMmanager.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
      <None Include="Assets\_Asset\2D Kitchen Isometric Pack\READ ME.txt" />
      <None Include="Assets\GUIPackEasyFlat\Demo\Fonts\OFL JosefinSans.txt" />
-     <None Include="Assets\StreamingAssets\HiddenARCore\e9b9b6a3-f0f3-4806-a82b-225f00723924.imgdb-imglist.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
      <None Include="Assets\GUIPackEasyFlat\Demo\Fonts\OFL - Pacifico.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
@@ -95,6 +94,7 @@
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+     <None Include="Assets\StreamingAssets\HiddenARCore\e9b9b6a3-f0f3-4806-a82b-225f00723924.imgdb-imglist.txt" />
      <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
