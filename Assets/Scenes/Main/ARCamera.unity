@@ -1111,7 +1111,7 @@ MonoBehaviour:
   - {fileID: 1657210274609154922, guid: c1564084f7e5a9c49afe30efb780f393, type: 3}
   - {fileID: 1657210274609154922, guid: c1564084f7e5a9c49afe30efb780f393, type: 3}
   - {fileID: 1657210274609154922, guid: c1564084f7e5a9c49afe30efb780f393, type: 3}
-  objectPrefab: {fileID: 1041763806816753789, guid: 489d309cb808aec419f2052fa6ce2b25, type: 3}
+  objectPrefab: {fileID: 2973802868228343452, guid: 4a34580a49020af49b4c68562538573b, type: 3}
 --- !u!1 &1232743775
 GameObject:
   m_ObjectHideFlags: 0
