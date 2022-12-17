@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "R54R3020VSN",
         "name": "com.DefaultCompany.HamStoryAR",
-        "processId": 22539,
+        "processId": 29299,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -282,6 +282,30 @@
             "deviceId": "R54R3020VSN",
             "name": "com.DefaultCompany.HamStoryAR",
             "processId": 22539,
+            "exited": false
+        },
+        {
+            "deviceId": "R54R3020VSN",
+            "name": "com.DefaultCompany.HamStoryAR",
+            "processId": 26002,
+            "exited": false
+        },
+        {
+            "deviceId": "R54R3020VSN",
+            "name": "com.DefaultCompany.HamStoryAR",
+            "processId": 26727,
+            "exited": false
+        },
+        {
+            "deviceId": "R54R3020VSN",
+            "name": "com.DefaultCompany.HamStoryAR",
+            "processId": 28383,
+            "exited": false
+        },
+        {
+            "deviceId": "R54R3020VSN",
+            "name": "com.DefaultCompany.HamStoryAR",
+            "processId": 29299,
             "exited": false
         },
         {

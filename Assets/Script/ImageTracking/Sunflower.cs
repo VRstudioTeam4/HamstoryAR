@@ -8,7 +8,8 @@ public class Sunflower : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sunflowerseed = 0;
+        // sunflowerseed = 0;
+        sunflowerseed = 5;
     }
 
     private void Awake()
