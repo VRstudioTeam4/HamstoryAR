@@ -20,6 +20,8 @@ public class MultipleTrackedImages : MonoBehaviour
     public GameObject bread;
     public GameObject cookie;
     public GameObject donut;
+
+    // face
     public GameObject coffee;
     public GameObject money;
 
@@ -28,9 +30,8 @@ public class MultipleTrackedImages : MonoBehaviour
     public GameObject breadani;
     public GameObject cookieani;
     public GameObject donutani;
-
-    //public GameObject coffeeani;
-    //public GameObject moneyani;
+    public GameObject coffeeani;
+    public GameObject moneyani;
 
 
     public GameObject objectToInstinate;
@@ -118,7 +119,7 @@ public class MultipleTrackedImages : MonoBehaviour
 
                 audio1.Play();
                 appleani.SetActive(true);
-                Invoke("activefunction", 9);
+                Invoke("activefunction", 4);
 
                 
             }
@@ -142,7 +143,7 @@ public class MultipleTrackedImages : MonoBehaviour
 
                 breadani.SetActive(true);
 
-                Invoke("activefunction", 9); 
+                Invoke("activefunction", 4); 
             }
             else if (Input.touches[0].phase == TouchPhase.Began &&
               Physics.Raycast(ray, out hit, Mathf.Infinity, cookiehit))
@@ -163,7 +164,7 @@ public class MultipleTrackedImages : MonoBehaviour
                 audio1.Play();
                 cookieani.SetActive(true);
 
-                Invoke("activefunction", 9);
+                Invoke("activefunction", 4);
 
 
             }
@@ -186,7 +187,7 @@ public class MultipleTrackedImages : MonoBehaviour
                 audio1.Play();
                 donutani.SetActive(true);
 
-                Invoke("activefunction", 9);
+                Invoke("activefunction", 4);
 
 
             }
@@ -209,7 +210,7 @@ public class MultipleTrackedImages : MonoBehaviour
                 audio1.Play();
                 cookieani.SetActive(true);
 
-                Invoke("activefunction", 9);
+                Invoke("activefunction", 4);
 
 
             }
@@ -230,9 +231,9 @@ public class MultipleTrackedImages : MonoBehaviour
                 Debug.Log("Get coffee Sticker & 10 sunflower");
 
                 audio1.Play();
-              //  Hiphop.SetActive(true);
+                coffeeani.SetActive(true);
 
-              //  Invoke("activefunction", 3);
+                Invoke("activefunction", 5);
 
 
             }
@@ -253,9 +254,9 @@ public class MultipleTrackedImages : MonoBehaviour
                 Debug.Log("Get money Sticker & 10 sunflower");
 
                 audio1.Play();
-          //      Hiphop.SetActive(true);
+                moneyani.SetActive(true);
 
-            //    Invoke("activefunction", 3);
+                Invoke("activefunction", 5);
             }
 
             transform.Rotate(xAngle * Time.deltaTime, yAngle * Time.deltaTime, zAngle * Time.deltaTime, Space.World);
@@ -361,15 +362,15 @@ public class MultipleTrackedImages : MonoBehaviour
             {
                 donutani.transform.position = img.transform.position;
             }
-            /*
             else if (name == "coffee")
             {
-                Hiphop.transform.position = img.transform.position;
+                coffeeani.transform.position = img.transform.position;
             }
             else if (name == "money")
             {
-                Hiphop.transform.position = img.transform.position;
-            }*/
+                apple.SetActive(false);
+                moneyani.transform.position = img.transform.position;
+            }
 
         }
         // poor or none tracking
@@ -385,6 +386,8 @@ public class MultipleTrackedImages : MonoBehaviour
         breadani.SetActive(false);
         cookieani.SetActive(false);
         donutani.SetActive(false);
+        coffeeani.SetActive(false);
+        moneyani.SetActive(false);
     }
 
 
