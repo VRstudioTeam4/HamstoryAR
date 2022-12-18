@@ -19,8 +19,8 @@ MonoBehaviour:
       m_GuidLow: 5131937398279455820
       m_GuidHigh: 12099354069127203501
     m_SerializedTextureGuid:
-      m_GuidLow: 1459663758187260899
-      m_GuidHigh: 1616089257133075179
+      m_GuidLow: 13746323678866679888
+      m_GuidHigh: 6361137319675823946
     m_Size: {x: 0.2, y: 0.2}
     m_SpecifySize: 1
     m_Name: apple
@@ -29,8 +29,8 @@ MonoBehaviour:
       m_GuidLow: 4820691481308122292
       m_GuidHigh: 13992724668716809892
     m_SerializedTextureGuid:
-      m_GuidLow: 12552770321298230953
-      m_GuidHigh: 2576634059331044905
+      m_GuidLow: 1459663758187260899
+      m_GuidHigh: 1616089257133075179
     m_Size: {x: 0.2, y: 0.2}
     m_SpecifySize: 1
     m_Name: bread

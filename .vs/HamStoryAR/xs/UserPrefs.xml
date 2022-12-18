@@ -1,7 +1,7 @@
 ﻿<Properties StartupConfiguration="{10ABC91A-4008-DC37-D5C1-3EB6DAEA3AB3}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/ImageTracking/MultipleTrackedImages.cs">
     <Files>
-      <File FileName="Assets/Script/ImageTracking/MultipleTrackedImages.cs" Line="387" Column="35" />
+      <File FileName="Assets/Script/ImageTracking/MultipleTrackedImages.cs" Line="142" Column="1" />
       <File FileName="Assets/Script/Story/StoryButon.cs" />
       <File FileName="Assets/Script/MainScene/LikeManager.cs" />
       <File FileName="Assets/Script/Story/Likemention.cs" />

@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "R54R3020WPM",
         "name": "com.DefaultCompany.HamStoryAR",
-        "processId": 24906,
+        "processId": 26609,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -114,6 +114,24 @@
             "deviceId": "R54R3020WPM",
             "name": "com.DefaultCompany.HamStoryAR",
             "processId": 24906,
+            "exited": false
+        },
+        {
+            "deviceId": "R54R3020WPM",
+            "name": "com.DefaultCompany.HamStoryAR",
+            "processId": 25367,
+            "exited": false
+        },
+        {
+            "deviceId": "R54R3020WPM",
+            "name": "com.DefaultCompany.HamStoryAR",
+            "processId": 25768,
+            "exited": false
+        },
+        {
+            "deviceId": "R54R3020WPM",
+            "name": "com.DefaultCompany.HamStoryAR",
+            "processId": 26609,
             "exited": false
         },
         {
