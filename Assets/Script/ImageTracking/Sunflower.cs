@@ -9,7 +9,8 @@ public class Sunflower : MonoBehaviour
     void Start()
     {
         // sunflowerseed = 0;
-        sunflowerseed = 5;
+        sunflowerseed = 1;
+        
     }
 
     private void Awake()

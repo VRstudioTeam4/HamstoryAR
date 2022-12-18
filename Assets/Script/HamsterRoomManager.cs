@@ -20,6 +20,7 @@ public class HamsterRoomManager : MonoBehaviour
   public Text likeText;
   public Text SunflowerText;
 
+
   public GameObject malpoongsun;
 
   float timer;
@@ -28,7 +29,7 @@ public class HamsterRoomManager : MonoBehaviour
   bool setting = false;
 
   public GameObject touchParticle;
-  public Material[] myMaterials = new Material[3];
+  public Material[] myMaterials = new Material[5];
 
   float _eatTimer;
   enum hamsterState
@@ -99,6 +100,7 @@ public class HamsterRoomManager : MonoBehaviour
 
       timer = 0.0f;
       waitingTime = 3;
+
 
       // 각 상태에 따른 랜덤 가중치 부여
       m_hamsterStates.Add(hamsterState.Idle, 90);
@@ -212,7 +214,7 @@ public class HamsterRoomManager : MonoBehaviour
             hamsterTouch = false;
             m_hamsterState = hamsterState.Idle;
           }
-          else if (m_hamsterState == hamsterState.Hungry)
+          else if (m_hamsterState == hamsterState.Hungry && !(m_Animator.GetBool("Eat") || m_Animator.GetBool("Sad")))
           {
             //배고픔 상태 처리
             if (_Sunflower.sunflowerseed > 0)
@@ -295,6 +297,14 @@ public class HamsterRoomManager : MonoBehaviour
     while (_eatTimer > 0)
     {
       _eatTimer -= Time.deltaTime;
+      if (m_Animator.GetBool("Eat") && hamsterObject.GetComponent<Renderer>().material != myMaterials[3])
+      {
+        hamsterObject.GetComponent<Renderer>().material = myMaterials[3];
+      }
+      if (m_Animator.GetBool("Sad") && hamsterObject.GetComponent<Renderer>().material != myMaterials[4])
+      {
+        hamsterObject.GetComponent<Renderer>().material = myMaterials[4];
+      }
       yield return null;
       if (_eatTimer < 0)
       {
@@ -312,6 +322,7 @@ public class HamsterRoomManager : MonoBehaviour
         m_Animator.SetBool("Stroke", false);
         hamsterTouch = false;
         m_hamsterState = hamsterState.Idle;
+        hamsterObject.GetComponent<Renderer>().material = myMaterials[0];
       }
     }
   }
