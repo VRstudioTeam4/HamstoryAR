@@ -21,6 +21,8 @@ public class screenshot_test : MonoBehaviour
 
   public Animator m_Animator;
   public Material[] pictureMaterial = new Material[5];
+  public Material excitedMaterial;
+
 
   public GameObject ARSessionOrigin;
 
@@ -42,11 +44,21 @@ public class screenshot_test : MonoBehaviour
   public void testScreenShot()
   {
     hamsterObject = ARSessionOrigin.GetComponent<FaceRegionManager>().objectPrefab.transform.GetChild(0).gameObject;
-    StartCoroutine(Countdown());
+    
     m_Animator = ARSessionOrigin.GetComponent<FaceRegionManager>().objectPrefab.GetComponent<Animator>();
     Debug.Log(m_Animator);
     m_Animator.SetBool("Idle", false);
-    m_Animator.SetBool("Pose", true);
+    int randomNum = Random.Range(0, 2);
+    if (randomNum == 0)
+    {
+      m_Animator.SetBool("Pose", true);
+    }
+    else
+    {
+      m_Animator.SetBool("Excited", true);
+    }
+    StartCoroutine(Countdown());
+    // m_Animator.SetBool("Pose", true);
   }
 
   private IEnumerator Countdown()
@@ -72,33 +84,41 @@ public class screenshot_test : MonoBehaviour
           StartCoroutine(Screenshot());
         }
       }
-
-      if (_timer < 3.5f)
+      if (m_Animator.GetBool("Pose") == true)
       {
-        if (_timer < 2.9f)
+        if (_timer < 3.5f)
         {
-          if (_timer < 1.0f)
+          if (_timer < 2.9f)
           {
-            if (_timer < 0.5f)
+            if (_timer < 1.0f)
             {
-              hamsterObject.GetComponent<Renderer>().material = pictureMaterial[4];
+              if (_timer < 0.5f)
+              {
+                hamsterObject.GetComponent<Renderer>().material = pictureMaterial[4];
+              }
+              else
+              {
+                hamsterObject.GetComponent<Renderer>().material = pictureMaterial[3];
+              }
             }
             else
             {
-              hamsterObject.GetComponent<Renderer>().material = pictureMaterial[3];
+              hamsterObject.GetComponent<Renderer>().material = pictureMaterial[2];
             }
           }
           else
           {
-            hamsterObject.GetComponent<Renderer>().material = pictureMaterial[2];
+            hamsterObject.GetComponent<Renderer>().material = pictureMaterial[1];
           }
-        }
-        else
-        {
-          hamsterObject.GetComponent<Renderer>().material = pictureMaterial[1];
-        }
 
+        }
       }
+      else if (m_Animator.GetBool("Excited") == true){
+        if(hamsterObject.GetComponent<Renderer>().material != excitedMaterial && _timer < 3.0f) {
+          hamsterObject.GetComponent<Renderer>().material = excitedMaterial;
+        }
+      }
+
     }
   }
 
@@ -124,6 +144,7 @@ public class screenshot_test : MonoBehaviour
     GameObject.Find("Canvas").transform.Find("CameraButton").gameObject.SetActive(true);
     m_Animator.SetBool("Idle", true);
     m_Animator.SetBool("Pose", false);
+    m_Animator.SetBool("Excited", false);
     // hamsterObject.GetComponent<Renderer>().material = pictureMaterial[0];
     StartCoroutine(ShowToastMessage());
     StartCoroutine(ReturnMaterial());
