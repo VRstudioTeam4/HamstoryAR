@@ -39,8 +39,8 @@ MonoBehaviour:
       m_GuidLow: 5392433043615519153
       m_GuidHigh: 9350041544557787546
     m_SerializedTextureGuid:
-      m_GuidLow: 8553625787081544798
-      m_GuidHigh: 1327869692867125753
+      m_GuidLow: 10676031311542995071
+      m_GuidHigh: 8058885434957161960
     m_Size: {x: 0.2, y: 0.2}
     m_SpecifySize: 1
     m_Name: cookie
@@ -49,8 +49,8 @@ MonoBehaviour:
       m_GuidLow: 5556188390237418346
       m_GuidHigh: 18017801030676624313
     m_SerializedTextureGuid:
-      m_GuidLow: 5085929914453112852
-      m_GuidHigh: 15919471990293801626
+      m_GuidLow: 1498091733424747103
+      m_GuidHigh: 4883218636124380347
     m_Size: {x: 0.2, y: 0.2}
     m_SpecifySize: 1
     m_Name: donut

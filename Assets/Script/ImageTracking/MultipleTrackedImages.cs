@@ -118,7 +118,7 @@ public class MultipleTrackedImages : MonoBehaviour
 
                 audio1.Play();
                 appleani.SetActive(true);
-                Invoke("activefunction", 3);
+                Invoke("activefunction", 4);
 
                 
             }
@@ -142,7 +142,7 @@ public class MultipleTrackedImages : MonoBehaviour
 
                 breadani.SetActive(true);
 
-                Invoke("activefunction", 3); 
+                Invoke("activefunction", 4); 
             }
             else if (Input.touches[0].phase == TouchPhase.Began &&
               Physics.Raycast(ray, out hit, Mathf.Infinity, cookiehit))
@@ -163,7 +163,7 @@ public class MultipleTrackedImages : MonoBehaviour
                 audio1.Play();
                 cookieani.SetActive(true);
 
-                Invoke("activefunction", 3);
+                Invoke("activefunction", 4);
 
 
             }
@@ -186,7 +186,7 @@ public class MultipleTrackedImages : MonoBehaviour
                 audio1.Play();
                 donutani.SetActive(true);
 
-                Invoke("activefunction", 3);
+                Invoke("activefunction", 4);
 
 
             }
@@ -209,7 +209,7 @@ public class MultipleTrackedImages : MonoBehaviour
                 audio1.Play();
                 cookieani.SetActive(true);
 
-                Invoke("activefunction", 3);
+                Invoke("activefunction", 4);
 
 
             }
