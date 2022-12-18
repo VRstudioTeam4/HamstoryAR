@@ -1446,7 +1446,7 @@ GameObject:
   - component: {fileID: 682291882}
   - component: {fileID: 682291881}
   m_Layer: 5
-  m_Name: Bored
+  m_Name: Sleepy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1550,7 +1550,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 34}
+  m_AnchoredPosition: {x: 0, y: 61.2}
   m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &926830112
@@ -2459,15 +2459,21 @@ MonoBehaviour:
   SunflowerText: {fileID: 1967437124}
   malpoongsun: {fileID: 926830110}
   touchParticle: {fileID: 5610309019745498103, guid: f208f7985a5223b4eb3d3bfa09973704, type: 3}
+  seedObject: {fileID: 6164895085352783533, guid: 62404796eb17ce84abbcbd1af46db796, type: 3}
   myMaterials:
   - {fileID: 2100000, guid: 0ffbd03546d9a3743bbff58875d7a654, type: 2}
   - {fileID: 2100000, guid: 2fdc77335cbcf2e42ade2d11f4b8174f, type: 2}
   - {fileID: 2100000, guid: f3c19e1d2a160254f96644e551c1fd39, type: 2}
+  - {fileID: 2100000, guid: 33ab0ce59181cb74b98aa3f0410c061d, type: 2}
+  - {fileID: 2100000, guid: c56863b3cc2afe3448fe5b5410f561da, type: 2}
+  - {fileID: 2100000, guid: e9253ba821ec05947bc54be362e1845a, type: 2}
   m_hamsterState: 0
   m_hamsterBeforeState: 0
   m_Animator: {fileID: 1609625068}
   clickAudio: {fileID: 8300000, guid: d6dd22f60fda95a4b950e2e7eca96d27, type: 3}
   strokeAudio: {fileID: 8300000, guid: 5d5c45299935aa544a572d0c1ca6570b, type: 3}
+  hungryAudio: {fileID: 8300000, guid: c80b95d94baefc0439f793abf77903e3, type: 3}
+  eatAudio: {fileID: 8300000, guid: 9876496230a17eb499b9a7a5395ee569, type: 3}
 --- !u!4 &1706595545
 Transform:
   m_ObjectHideFlags: 0
@@ -3108,7 +3114,7 @@ GameObject:
   - component: {fileID: 1895803974}
   - component: {fileID: 1895803973}
   m_Layer: 5
-  m_Name: Fun
+  m_Name: Bored
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3681,6 +3687,18 @@ PrefabInstance:
     - target: {fileID: 6278992861239656775, guid: aed7374455e43e44ab0804e3ab590cca, type: 3}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6278992861239656775, guid: aed7374455e43e44ab0804e3ab590cca, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 163
+      objectReference: {fileID: 0}
+    - target: {fileID: 6278992861239656775, guid: aed7374455e43e44ab0804e3ab590cca, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 163
+      objectReference: {fileID: 0}
+    - target: {fileID: 6278992861239656775, guid: aed7374455e43e44ab0804e3ab590cca, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 163
       objectReference: {fileID: 0}
     - target: {fileID: 6278992861239656775, guid: aed7374455e43e44ab0804e3ab590cca, type: 3}
       propertyPath: m_LocalPosition.x
