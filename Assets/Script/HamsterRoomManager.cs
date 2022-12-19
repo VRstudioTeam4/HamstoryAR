@@ -215,81 +215,96 @@ public class HamsterRoomManager : MonoBehaviour
         if (hamsterTouch == true)
         {
           Debug.Log("touoououdoch");
-          if (m_hamsterState == hamsterState.Idle || m_hamsterState == hamsterState.Sad || m_hamsterState == hamsterState.Happy || m_hamsterState == hamsterState.Angry || m_hamsterState == hamsterState.Sleepy)
+          var ray = Camera.main.ScreenPointToRay(touch.position);
+          RaycastHit hit;
+
+          if (Physics.Raycast(ray, out hit))
           {
-            Debug.Log(touch.position);
-            Vector3 pos = Camera.main.ScreenToWorldPoint(touch.position);
-            Debug.Log(pos);
-
-            Vector3 pos1 = Camera.main.ScreenToViewportPoint(touch.position);
-            Debug.Log("pos1 : " + pos1);
-
-            Instantiate(touchParticle, new Vector3(pos1.x * 13 - 6.5f, pos1.y * 15 - 15.3f, 0), Quaternion.identity);
-
-
-            Debug.Log("touch!!");
-            StartCoroutine("ClickMaterial");
-            audioSource.clip = clickAudio;
-            audioSource.Play();
-            _Like.like += 1;
-            likeText.text = _Like.like.ToString();
-            hamsterTouch = false;
-            m_hamsterBeforeState = m_hamsterState;
-            m_hamsterState = hamsterState.Idle;
-          }
-          else if (m_hamsterState == hamsterState.Hungry && !(m_Animator.GetBool("Eat") || m_Animator.GetBool("Sad")))
-          {
-            //배고픔 상태 처리
-            if (_Sunflower.sunflowerseed > 0)
+            if (hit.transform.gameObject == hamsterObject)
             {
-              if (!m_Animator.GetBool("Eat"))
+              if (m_hamsterState == hamsterState.Idle || m_hamsterState == hamsterState.Sad || m_hamsterState == hamsterState.Happy || m_hamsterState == hamsterState.Angry || m_hamsterState == hamsterState.Sleepy)
               {
-                _Sunflower.sunflowerseed -= 1;
-                SunflowerText.text = _Sunflower.sunflowerseed.ToString();
-                audioSource.clip = eatAudio;
-                audioSource.loop = false;
+                Debug.Log(touch.position);
+                Vector3 pos = Camera.main.ScreenToWorldPoint(touch.position);
+                Debug.Log(pos);
+
+                Vector3 pos1 = Camera.main.ScreenToViewportPoint(touch.position);
+                Debug.Log("pos1 : " + pos1);
+
+                Instantiate(touchParticle, new Vector3(pos1.x * 13 - 6.5f, pos1.y * 15 - 15.3f, 0), Quaternion.identity);
+
+
+                Debug.Log("touch!!");
+                StartCoroutine("ClickMaterial");
+                audioSource.clip = clickAudio;
                 audioSource.Play();
+                _Like.like += 1;
+                likeText.text = _Like.like.ToString();
+                hamsterTouch = false;
+                m_hamsterBeforeState = m_hamsterState;
+                m_hamsterState = hamsterState.Idle;
               }
-              m_Animator.SetBool("Idle", false);
-              m_Animator.SetBool("Love", false);
-              m_Animator.SetBool("Hungry", false);
-              m_Animator.SetBool("Bored", false);
-              m_Animator.SetBool("Eat", true);
-              m_Animator.SetBool("Sad", false);
-              m_Animator.SetBool("Stroke", false);
-              m_Animator.SetBool("Dance", false);
+              else if (m_hamsterState == hamsterState.Hungry && !(m_Animator.GetBool("Eat") || m_Animator.GetBool("Sad")))
+              {
+                //배고픔 상태 처리
+                if (_Sunflower.sunflowerseed > 0)
+                {
+                  if (!m_Animator.GetBool("Eat"))
+                  {
+                    _Sunflower.sunflowerseed -= 1;
+                    SunflowerText.text = _Sunflower.sunflowerseed.ToString();
+                    audioSource.clip = eatAudio;
+                    audioSource.loop = false;
+                    audioSource.Play();
+                  }
+                  m_Animator.SetBool("Idle", false);
+                  m_Animator.SetBool("Love", false);
+                  m_Animator.SetBool("Hungry", false);
+                  m_Animator.SetBool("Bored", false);
+                  m_Animator.SetBool("Eat", true);
+                  m_Animator.SetBool("Sad", false);
+                  m_Animator.SetBool("Stroke", false);
+                  m_Animator.SetBool("Dance", false);
+                }
+                else
+                {
+                  if (!m_Animator.GetBool("Sad"))
+                  {
+                    audioSource.clip = hungryAudio;
+                    audioSource.loop = false;
+                    audioSource.Play();
+                  }
+                  m_Animator.SetBool("Idle", false);
+                  m_Animator.SetBool("Love", false);
+                  m_Animator.SetBool("Hungry", false);
+                  m_Animator.SetBool("Bored", false);
+                  m_Animator.SetBool("Eat", false);
+                  m_Animator.SetBool("Sad", true);
+                  m_Animator.SetBool("Stroke", false);
+                  m_Animator.SetBool("Dance", false);
+                }
+                StartCoroutine(HamsterEat());
+              }
+              else if (m_hamsterState == hamsterState.Bored && !m_Animator.GetBool("Dance"))
+              {
+                //심심 상태 처리
+                m_Animator.SetBool("Idle", false);
+                m_Animator.SetBool("Love", false);
+                m_Animator.SetBool("Hungry", false);
+                m_Animator.SetBool("Bored", false);
+                m_Animator.SetBool("Eat", false);
+                m_Animator.SetBool("Sad", false);
+                m_Animator.SetBool("Stroke", false);
+                m_Animator.SetBool("Dance", true);
+                StartCoroutine(HamsterDance());
+              }
             }
             else
             {
-              if (!m_Animator.GetBool("Sad"))
-              {
-                audioSource.clip = hungryAudio;
-                audioSource.loop = false;
-                audioSource.Play();
-              }
-              m_Animator.SetBool("Idle", false);
-              m_Animator.SetBool("Love", false);
-              m_Animator.SetBool("Hungry", false);
-              m_Animator.SetBool("Bored", false);
-              m_Animator.SetBool("Eat", false);
-              m_Animator.SetBool("Sad", true);
-              m_Animator.SetBool("Stroke", false);
-              m_Animator.SetBool("Dance", false);
+              hamsterTouch = false;
+              m_hamsterBeforeState = m_hamsterState;
+              m_hamsterState = hamsterState.Idle;
             }
-            StartCoroutine(HamsterEat());
-          }
-          else if (m_hamsterState == hamsterState.Bored && !m_Animator.GetBool("Dance"))
-          {
-            //심심 상태 처리
-            m_Animator.SetBool("Idle", false);
-            m_Animator.SetBool("Love", false);
-            m_Animator.SetBool("Hungry", false);
-            m_Animator.SetBool("Bored", false);
-            m_Animator.SetBool("Eat", false);
-            m_Animator.SetBool("Sad", false);
-            m_Animator.SetBool("Stroke", false);
-            m_Animator.SetBool("Dance", true);
-            StartCoroutine(HamsterDance());
           }
 
         }
