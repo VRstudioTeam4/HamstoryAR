@@ -1,9 +1,9 @@
 {
-    "m_SelectedDeviceId": "R54R8032G8B",
+    "m_SelectedDeviceId": "R54R3020WPM",
     "m_SelectedPackage": {
-        "deviceId": "R54R8032G8B",
+        "deviceId": "R54R3020WPM",
         "name": "com.DefaultCompany.HamStoryAR",
-        "processId": 30310,
+        "processId": 12492,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -150,6 +150,30 @@
             "deviceId": "R54R3020WPM",
             "name": "com.DefaultCompany.HamStoryAR",
             "processId": 31320,
+            "exited": false
+        },
+        {
+            "deviceId": "R54R3020WPM",
+            "name": "com.DefaultCompany.HamStoryAR",
+            "processId": 6741,
+            "exited": false
+        },
+        {
+            "deviceId": "R54R3020WPM",
+            "name": "com.DefaultCompany.HamStoryAR",
+            "processId": 6797,
+            "exited": false
+        },
+        {
+            "deviceId": "R54R3020WPM",
+            "name": "com.DefaultCompany.HamStoryAR",
+            "processId": 11126,
+            "exited": false
+        },
+        {
+            "deviceId": "R54R3020WPM",
+            "name": "com.DefaultCompany.HamStoryAR",
+            "processId": 12492,
             "exited": false
         },
         {

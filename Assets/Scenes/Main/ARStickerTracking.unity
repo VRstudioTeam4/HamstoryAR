@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -676,7 +676,7 @@ MonoBehaviour:
   donutani: {fileID: 145987092}
   coffeeani: {fileID: 1479954105}
   moneyani: {fileID: 1479954105}
-  objectToInstinate: {fileID: 1808496782222594335, guid: 5e3f082639cd74464930bc51ac20a197, type: 3}
+  objectToInstinate: {fileID: 3112912980091426914, guid: 111980ba1c1234f94b5c6535fb5565ba, type: 3}
   placeablePrefabs:
   - name: apple
     prefab: {fileID: 6698479709484903419, guid: cfa417574bfb245c695630768fd9bfd0, type: 3}

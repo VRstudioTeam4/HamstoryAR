@@ -1,7 +1,7 @@
 ﻿<Properties StartupConfiguration="{10ABC91A-4008-DC37-D5C1-3EB6DAEA3AB3}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/ImageTracking/MultipleTrackedImages.cs">
     <Files>
-      <File FileName="Assets/Script/ImageTracking/MultipleTrackedImages.cs" Line="255" Column="1" />
+      <File FileName="Assets/Script/ImageTracking/MultipleTrackedImages.cs" Line="71" Column="32" />
       <File FileName="Assets/Script/Story/StoryButon.cs" />
       <File FileName="Assets/Script/MainScene/LikeManager.cs" />
       <File FileName="Assets/Script/Story/Likemention.cs" />
@@ -28,7 +28,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="1ce47c23-5a10-4204-8500-950cb8e5d71b" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="91113d4c-ea2a-445e-83c8-128f98a9005d" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

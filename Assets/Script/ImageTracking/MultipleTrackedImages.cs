@@ -34,7 +34,7 @@ public class MultipleTrackedImages : MonoBehaviour
     public GameObject moneyani;
 
 
-    public GameObject objectToInstinate;
+  //  public GameObject objectToInstinate;
     [SerializeField]
     private PlaceablePrefab[] placeablePrefabs;
 
@@ -331,7 +331,7 @@ public class MultipleTrackedImages : MonoBehaviour
         bread.SetActive(true);
         cookie.SetActive(true);
         donut.SetActive(true);
-        coffee.SetActive(true);
+      //  coffee.SetActive(true);
         money.SetActive(true);
 
         spawned.transform.Rotate(xAngle * Time.deltaTime, yAngle * Time.deltaTime, zAngle * Time.deltaTime, Space.World);
@@ -339,7 +339,7 @@ public class MultipleTrackedImages : MonoBehaviour
         //check the tracking status
         if (img.trackingState == TrackingState.Tracking)
         {
-           
+            apple.SetActive(false);
             // update position (or rotation), and enable gameobject
             spawned.transform.position = img.transform.position;
             //   spawned.transform.Rotate(xAngle * Time.deltaTime, yAngle * Time.deltaTime, zAngle * Time.deltaTime, Space.World);
@@ -348,22 +348,27 @@ public class MultipleTrackedImages : MonoBehaviour
 
             if(name == "apple")
             {
+                apple.SetActive(true);
                 appleani.transform.position = img.transform.position;
             }
             else if(name == "bread")
             {
+                apple.SetActive(false);
                 breadani.transform.position = img.transform.position;
             }
             else if (name == "cookie")
             {
+                apple.SetActive(false);
                 cookieani.transform.position = img.transform.position;
             }
             else if (name == "donut")
             {
+                apple.SetActive(false);
                 donutani.transform.position = img.transform.position;
             }
             else if (name == "coffee")
             {
+                apple.SetActive(false);
                 coffeeani.transform.position = img.transform.position;
             }
             else if (name == "money")
