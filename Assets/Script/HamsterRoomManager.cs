@@ -287,14 +287,21 @@ public class HamsterRoomManager : MonoBehaviour
             likeText.text = _Like.like.ToString();
             hamsterStroke = false;
             hamsterObject.GetComponent<Renderer>().material = myMaterials[0];
+            m_hamsterState = hamsterState.Idle;
+            m_Animator.SetBool("Idle", true);
+            m_Animator.SetBool("Love", false);
+            m_Animator.SetBool("Hungry", false);
+            m_Animator.SetBool("Bored", false);
+            m_Animator.SetBool("Eat", false);
+            m_Animator.SetBool("Sad", false);
+            m_Animator.SetBool("Stroke", false);
+            m_Animator.SetBool("Dance", false);
             audioSource.loop = false;
             audioSource.Stop();
           }
         }
 
-
       }
-
     }
 
     // 말풍선
@@ -368,7 +375,8 @@ public class HamsterRoomManager : MonoBehaviour
       //   seedExist = true;
       //   // Instantiate(seedObject);
       // }
-      if( _eatTimer < 0.3f) {
+      if (_eatTimer < 0.3f)
+      {
         Destroy(existSeed);
       }
       yield return null;
