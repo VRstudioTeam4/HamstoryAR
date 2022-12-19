@@ -68,12 +68,14 @@ public class MultipleTrackedImages : MonoBehaviour
     
     private void Start()
     {
+        /*
         apple.SetActive(false);
         bread.SetActive(false);
         cookie.SetActive(false);
         donut.SetActive(false);
         coffee.SetActive(false);
         money.SetActive(false);
+        */
     }
 
     void Update()
