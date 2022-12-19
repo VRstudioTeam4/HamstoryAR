@@ -122,19 +122,33 @@ public class HamsterRoomManager : MonoBehaviour
       setting = true;
     }
 
-
     // 3초에 한 번 랜덤으로 상태 값 업데이트
 
     timer += Time.deltaTime;
 
-    if (timer > waitingTime && !(m_hamsterState == hamsterState.Love && hamsterStroke))
+    if (timer > waitingTime && !(m_hamsterState == hamsterState.Love && hamsterStroke) && !m_Animator.GetBool("Dance") && !m_Animator.GetBool("Eat") && !m_Animator.GetBool("Sad"))
     {
       Debug.Log("안녕: " + m_hamsterStates.Count);
-      setHamsterState();
+      if (m_hamsterBeforeState != hamsterState.Love && m_hamsterBeforeState != hamsterState.Hungry && m_hamsterBeforeState != hamsterState.Bored)
+      {
+        setHamsterState();
+      }
+      else
+      {
+        m_hamsterBeforeState = m_hamsterState;
+        m_hamsterState = hamsterState.Idle;
+        m_Animator.SetBool("Idle", true);
+        m_Animator.SetBool("Love", false);
+        m_Animator.SetBool("Hungry", false);
+        m_Animator.SetBool("Bored", false);
+        m_Animator.SetBool("Eat", false);
+        m_Animator.SetBool("Sad", false);
+        m_Animator.SetBool("Dance", false);
+        m_Animator.SetBool("Stroke", false);
+      }
       Debug.Log("랜덤 상태: " + m_hamsterState.ToString());
       timer = 0.0f;
     }
-
 
     SunflowerText.text = _Sunflower.sunflowerseed.ToString();
     likeText.text = _Like.like.ToString();
@@ -220,6 +234,7 @@ public class HamsterRoomManager : MonoBehaviour
             _Like.like += 1;
             likeText.text = _Like.like.ToString();
             hamsterTouch = false;
+            m_hamsterBeforeState = m_hamsterState;
             m_hamsterState = hamsterState.Idle;
           }
           else if (m_hamsterState == hamsterState.Hungry && !(m_Animator.GetBool("Eat") || m_Animator.GetBool("Sad")))
@@ -287,6 +302,7 @@ public class HamsterRoomManager : MonoBehaviour
             likeText.text = _Like.like.ToString();
             hamsterStroke = false;
             hamsterObject.GetComponent<Renderer>().material = myMaterials[0];
+            m_hamsterBeforeState = m_hamsterState;
             m_hamsterState = hamsterState.Idle;
             m_Animator.SetBool("Idle", true);
             m_Animator.SetBool("Love", false);
@@ -345,6 +361,7 @@ public class HamsterRoomManager : MonoBehaviour
         m_Animator.SetBool("Stroke", false);
         m_Animator.SetBool("Dance", false);
         hamsterTouch = false;
+        m_hamsterBeforeState = m_hamsterState;
         m_hamsterState = hamsterState.Idle;
         hamsterObject.GetComponent<Renderer>().material = myMaterials[0];
       }
@@ -397,6 +414,7 @@ public class HamsterRoomManager : MonoBehaviour
         m_Animator.SetBool("Stroke", false);
         m_Animator.SetBool("Dance", false);
         hamsterTouch = false;
+        m_hamsterBeforeState = m_hamsterState;
         m_hamsterState = hamsterState.Idle;
         hamsterObject.GetComponent<Renderer>().material = myMaterials[0];
       }
