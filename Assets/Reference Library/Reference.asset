@@ -19,8 +19,8 @@ MonoBehaviour:
       m_GuidLow: 5131937398279455820
       m_GuidHigh: 12099354069127203501
     m_SerializedTextureGuid:
-      m_GuidLow: 10709847491708739413
-      m_GuidHigh: 8513770761089830233
+      m_GuidLow: 9531257005834038992
+      m_GuidHigh: 1990486486941220107
     m_Size: {x: 0.2, y: 0.2}
     m_SpecifySize: 1
     m_Name: apple
@@ -29,8 +29,8 @@ MonoBehaviour:
       m_GuidLow: 4820691481308122292
       m_GuidHigh: 13992724668716809892
     m_SerializedTextureGuid:
-      m_GuidLow: 1459663758187260899
-      m_GuidHigh: 1616089257133075179
+      m_GuidLow: 8427426465001677720
+      m_GuidHigh: 15136053415701551256
     m_Size: {x: 0.2, y: 0.2}
     m_SpecifySize: 1
     m_Name: bread
@@ -69,8 +69,8 @@ MonoBehaviour:
       m_GuidLow: 5466817472918756049
       m_GuidHigh: 12709606885538729125
     m_SerializedTextureGuid:
-      m_GuidLow: 17630097344823038534
-      m_GuidHigh: 18130256729733648714
+      m_GuidLow: 10708134439767829603
+      m_GuidHigh: 3551086779947732168
     m_Size: {x: 0.2, y: 0.2}
     m_SpecifySize: 1
     m_Name: money
