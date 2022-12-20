@@ -2452,7 +2452,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newapple: {fileID: 21300000, guid: 46ae8b351670648838e91abd55493d77, type: 3}
   newbread: {fileID: 21300000, guid: 82c551e2d003f4702a23ff0445eae73b, type: 3}
-  newcookie: {fileID: 21300000, guid: bc68cdbaad3e940babac8b7220e86ef5, type: 3}
+  newcookie: {fileID: 21300000, guid: 58010db4ab823482c9a74a83200a3437, type: 3}
   newdonut: {fileID: 21300000, guid: bd738623fcee046258fa62cae92a7cf0, type: 3}
   newcoffee: {fileID: 21300000, guid: 6a9d66cd987e8489097618840f174962, type: 3}
   newmoney: {fileID: 21300000, guid: b92cfdfc8c35a4827828b61d2e26a827, type: 3}
