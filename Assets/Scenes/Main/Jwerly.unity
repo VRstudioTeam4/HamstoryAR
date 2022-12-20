@@ -2450,12 +2450,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b24f4ef55d89342f3ac3a814f399eb6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newapple: {fileID: 21300000, guid: 8126262670c66704584ffbe278217b98, type: 3}
-  newbread: {fileID: 21300000, guid: 9dd8e9217a69617468edb30a4fd8fd9b, type: 3}
-  newcookie: {fileID: 21300000, guid: 5ef51cc9eafb88f44b86638590e53fc9, type: 3}
-  newdonut: {fileID: 21300000, guid: cfb4a81091557f84daf2ce9986650609, type: 3}
-  newcoffee: {fileID: 21300000, guid: 48f77596b4cf9354b9b8da3868960925, type: 3}
-  newmoney: {fileID: 21300000, guid: 48f77596b4cf9354b9b8da3868960925, type: 3}
+  newapple: {fileID: 21300000, guid: 0b293cd2f0ab64081831052ce3bee28a, type: 3}
+  newbread: {fileID: 21300000, guid: 0b293cd2f0ab64081831052ce3bee28a, type: 3}
+  newcookie: {fileID: 21300000, guid: 249f0bec307894b44a070fad017e59c5, type: 3}
+  newdonut: {fileID: 21300000, guid: 3f91358045b0f4699bfc29a400a14270, type: 3}
+  newcoffee: {fileID: 21300000, guid: 6a9d66cd987e8489097618840f174962, type: 3}
+  newmoney: {fileID: 21300000, guid: 153ed81a6ecc548f7a3b2d9db4d2881f, type: 3}
 --- !u!4 &1606943046
 Transform:
   m_ObjectHideFlags: 0

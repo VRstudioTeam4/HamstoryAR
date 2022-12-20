@@ -19,8 +19,8 @@ MonoBehaviour:
       m_GuidLow: 5131937398279455820
       m_GuidHigh: 12099354069127203501
     m_SerializedTextureGuid:
-      m_GuidLow: 18398332183453530179
-      m_GuidHigh: 9440336257916839915
+      m_GuidLow: 10709847491708739413
+      m_GuidHigh: 8513770761089830233
     m_Size: {x: 0.2, y: 0.2}
     m_SpecifySize: 1
     m_Name: apple
@@ -29,8 +29,8 @@ MonoBehaviour:
       m_GuidLow: 4820691481308122292
       m_GuidHigh: 13992724668716809892
     m_SerializedTextureGuid:
-      m_GuidLow: 11039552201233666815
-      m_GuidHigh: 6683780543081077290
+      m_GuidLow: 1459663758187260899
+      m_GuidHigh: 1616089257133075179
     m_Size: {x: 0.2, y: 0.2}
     m_SpecifySize: 1
     m_Name: bread
@@ -39,8 +39,8 @@ MonoBehaviour:
       m_GuidLow: 5392433043615519153
       m_GuidHigh: 9350041544557787546
     m_SerializedTextureGuid:
-      m_GuidLow: 12431086276626339878
-      m_GuidHigh: 5786167800465195162
+      m_GuidLow: 10676031311542995071
+      m_GuidHigh: 8058885434957161960
     m_Size: {x: 0.2, y: 0.2}
     m_SpecifySize: 1
     m_Name: cookie
@@ -49,8 +49,8 @@ MonoBehaviour:
       m_GuidLow: 5556188390237418346
       m_GuidHigh: 18017801030676624313
     m_SerializedTextureGuid:
-      m_GuidLow: 8013309018841956489
-      m_GuidHigh: 5762322716855446283
+      m_GuidLow: 1498091733424747103
+      m_GuidHigh: 4883218636124380347
     m_Size: {x: 0.2, y: 0.2}
     m_SpecifySize: 1
     m_Name: donut
@@ -59,8 +59,8 @@ MonoBehaviour:
       m_GuidLow: 5189120922147738744
       m_GuidHigh: 12686816840763389608
     m_SerializedTextureGuid:
-      m_GuidLow: 5909960946019216477
-      m_GuidHigh: 7660662069145254745
+      m_GuidLow: 6091176820062527987
+      m_GuidHigh: 7740927846445165816
     m_Size: {x: 0.2, y: 0.2}
     m_SpecifySize: 1
     m_Name: coffee
@@ -69,8 +69,8 @@ MonoBehaviour:
       m_GuidLow: 5466817472918756049
       m_GuidHigh: 12709606885538729125
     m_SerializedTextureGuid:
-      m_GuidLow: 5909960946019216477
-      m_GuidHigh: 7660662069145254745
+      m_GuidLow: 17630097344823038534
+      m_GuidHigh: 18130256729733648714
     m_Size: {x: 0.2, y: 0.2}
     m_SpecifySize: 1
     m_Name: money

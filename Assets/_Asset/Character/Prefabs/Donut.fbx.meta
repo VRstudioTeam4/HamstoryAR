@@ -3,17 +3,7 @@ guid: dafe6b975d7694df885ba2665a08f6b9
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Donut1_1
-    second: {fileID: 2100000, guid: 922d915d692cff44bb01884b9f540412, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Donut1_3
-    second: {fileID: 2100000, guid: 10e1ad87af4750647a600b48758661d4, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
