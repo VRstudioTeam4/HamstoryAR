@@ -1,0 +1,6 @@
+a1fd444c4ddf4738ad0a01b66b8ae9a7|C:\Users\Shieun\Desktop\Hamstory\HamstoryAR\Assets\_Asset\TrackingImage\Image\3.png|0.2
+731f4cb4895c42e6a4feb516f32430c2|C:\Users\Shieun\Desktop\Hamstory\HamstoryAR\Assets\_Asset\TrackingImage\Image\sandwich_100 1.png|0.2
+67c811b1c5484ad59af982023f05c281|C:\Users\Shieun\Desktop\Hamstory\HamstoryAR\Assets\_Asset\TrackingImage\Image\2.png|0.2
+2940336a8be74d1bb9b3253393160cfa|C:\Users\Shieun\Desktop\Hamstory\HamstoryAR\Assets\_Asset\TrackingImage\Image\4.png|0.2
+4d29d47875fc4803a83625f4b2a010b0|C:\Users\Shieun\Desktop\Hamstory\HamstoryAR\Assets\_Asset\TrackingImage\Image\old\barcode1.jpeg|0.2
+f5389ad109864bdea50c65bf1f9861b0|C:\Users\Shieun\Desktop\Hamstory\HamstoryAR\Assets\_Asset\TrackingImage\Image\1.png|0.2
