@@ -93,6 +93,7 @@
     <Compile Include="Assets/Script/ARCamera/FaceRegionManager.cs" />
     <Compile Include="Assets/GUIPackEasyFlat/Demo/Scripts/LevelScene.cs" />
     <Compile Include="Assets/Script/HamsterRoomManager.cs" />
+    <Compile Include="Assets/Script/ImageTracking/ChangeMat.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
