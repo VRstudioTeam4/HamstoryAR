@@ -1,25 +1,3 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{1ac9ab10-0840-37dc-d5c1-3eb6daea3ab3}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NativeGallery.Runtime", "NativeGallery.Runtime.csproj", "{3cfb575c-8261-148e-c54a-ab74214317be}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NativeGallery.Editor", "NativeGallery.Editor.csproj", "{e9b3ede4-249e-c063-4122-7d62b6d9c146}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1ac9ab10-0840-37dc-d5c1-3eb6daea3ab3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1ac9ab10-0840-37dc-d5c1-3eb6daea3ab3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3cfb575c-8261-148e-c54a-ab74214317be}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3cfb575c-8261-148e-c54a-ab74214317be}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{e9b3ede4-249e-c063-4122-7d62b6d9c146}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{e9b3ede4-249e-c063-4122-7d62b6d9c146}.Debug|Any CPU.Build.0 = Debug|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-EndGlobal
+version https://git-lfs.github.com/spec/v1
+oid sha256:e8aee25828a83fafcdf8861da330571521d77a8d8ca94e44d3e26c622dc17167
+size 1360
